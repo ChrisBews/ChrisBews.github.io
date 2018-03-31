@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="stylesheet" media="all" href="assets/css/global.css" />
+		<title>Syrup Sounds</title>
+	</head>
+	<body>
+		
+		<div class="site-background">
+			<svg class="background-lines js-background-lines" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+			<svg class="background-shapes js-background-shapes" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+		</div>
+
+		<div class="options">
+			<div class="options-content">
+				<dl class="option">
+					<dt>View Mode:</dt>
+					<dd><a href="#" class="show-collisions">Collision Models</a> / <a href="#" class="hide-collisions active">Full Render</a></dd>
+				</dl>
+				<dl class="option">
+					<dt>Randomise:</dt>
+					<dd><a href="#" class="randomise-shapes">Shapes</a> / <a href="#" class="randomise-background">Background</a> / <a href="#" class="randomise-all">All</a></dd>
+				</dl>
+				<dl class="option">
+					<dt>Shape Selection:</dt>
+					<dd><a href="#" class="shapes-arcs">Arcs</a> / <a href="#" class="shapes-corners">Corners</a> / <a href="#" class="shapes-triangles">Triangles</a> / <a href="#" class="shapes-lines">Lines</a> / <a href="#" class="shapes-circles">Circles</a> / <a href="#" class="shapes-all active">All</a></dd>
+				</dl>
+				<dl class="option speed">
+					<dt>Max Speed:</dt>
+					<dd class="slider">
+						<div class="speed-progress-bar js-progress-bar">
+							<div class="js-progress bar"></div>
+							<div class="js-hitarea bar"></div>
+							<div class="js-handle"></div>
+						</div>
+						<div class="js-number-display">0.70</div>
+					</dd>
+				</dl>
+				</dl>
+				<dl class="option scale">
+					<dt>Shape Scale:</dt>
+					<dd class="slider">
+						<div class="scale-progress-bar js-progress-bar">
+							<div class="js-progress bar"></div>
+							<div class="js-hitarea bar"></div>
+							<div class="js-handle"></div>
+						</div>
+						<div class="js-number-display">1.00</div>
+					</dd>
+				</dl>
+				<div href="#" class="option"><a href="#" class="reset">Reset</a></div>
+			</div>
+		</div>
+		
+		<script src="assets/compiled/syrup.js"></script>
+	</body>
+</html>

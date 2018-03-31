@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>NATION.Animation Demo</title>
+		<style>
+			html, body {
+				margin: 0;
+				padding: 40px 0 0 0;
+				font-family: Courier, sans;
+				font-size: 100%;
+			}
+
+			.cell {
+				position: relative;
+				float: left;
+				width: 19.7vw;
+				height: 19.7vw;
+				background: rgb(250, 250, 250);
+			}
+			.cell:nth-child(2n+2) {
+				background: rgb(245, 245, 245);
+			}
+
+			.info {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				padding: 10px 10px;
+				color: #333;
+				font-size: 0.75em;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				background: rgba(255, 255, 255, 0.5);
+			}
+
+			.info h1 {
+				font-size: 1.25em;
+				margin: 0;
+				padding: 0 0 3px 0;
+			}
+
+			.info h2 {
+				margin: 0;
+				padding: 0 0 3px 0;
+				font-size: 1em;
+			}
+
+			.info p {
+				padding: 0 0 3px 0;
+				margin: 0;
+			}
+
+			.scroller {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				padding: 0 20px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				overflow: scroll;
+				color: #000;
+				opacity: 0.5;
+			}
+
+			.background-image {
+				position: absolute;
+				top: 5vw;
+				left: 4.5vw;
+				width: 9vw;
+				height: 5vw;
+				background: transparent url('assets/placeholder.jpg') no-repeat 50% 0;
+			}
+
+			.square {
+				position: absolute;
+				top: 5vw;
+				left: 7.5vw;
+				width: 5vw;
+				font-size: 1em;
+				height: 5vw;
+				background: #ff0066;
+			}
+
+			.copy-block {
+				position: absolute;
+				top: 5vw;
+				left: 7.5vw;
+				width: 5vw;
+			}
+
+			.js-multiple-elements,
+			.js-multiple-staggered-elements {
+				left: 3.5vw;
+				width: 2.5vw;
+				height: 2.5vw;
+				transform: translateY(-150%);
+			}
+			.js-multiple-elements:nth-child(2),
+			.js-multiple-staggered-elements:nth-child(2) {
+				left: calc(6vw + 1px);
+			}
+			.js-multiple-elements:nth-child(3),
+			.js-multiple-staggered-elements:nth-child(3) {
+				left: calc(8.5vw + 2px);
+			}
+			.js-multiple-elements:nth-child(4),
+			.js-multiple-staggered-elements:nth-child(4) {
+				left: calc(11vw + 3px);
+			}
+			.js-multiple-elements:nth-child(5),
+			.js-multiple-staggered-elements:nth-child(5) {
+				left: calc(13.5vw + 4px);
+			}
+
+			.controls {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 200;
+				width: 100%;
+				padding: 20px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				background: rgb(230, 230, 230);
+			}
+
+			.controls button {
+				width: 10vw;
+				padding: 10px;
+				border: 1px solid #333;
+				cursor: pointer;
+				color: #eee;
+				background: rgb(50, 50, 50);
+				font-family: Courier, sans;
+				transition: background 0.3s linear;
+			}
+
+			.controls button:hover {
+				background: #444;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="controls js-controls">
+			<button class="js-mode" data-alt="Use CSS">Use JavaScript</button>
+			<button class="js-play-pause" data-alt="Resume">Pause</button>
+		</div>
+
+		<article class="cell">
+			<div class="js-anim-target square js-delay-option"></div>
+			<div class="info">
+				<h1>Delay Option</h1>
+				<h2>Animate</h2>
+				<p>left: "12.5vw"</p>
+				<h2>Options</h2>
+				<p>delay: 3000</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-loop-option"></div>
+			<div class="info">
+				<h1>Loop Option</h1>
+				<h2>Animate</h2>
+				<p>left: "12.5vw"</p>
+				<h2>Options</h2>
+				<p>loop: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-bounce-option"></div>
+			<div class="info">
+				<h1>Bounce Option</h1>
+				<h2>Animate</h2>
+				<p>left: "12.5vw"</p>
+				<h2>Options</h2>
+				<p>bounce: true, easing: "easeInSine"</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-bounce-easing"></div>
+			<div class="info">
+				<h1>Flip Bounce Easing</h1>
+				<h2>Animate</h2>
+				<p>left: "12.5vw"</p>
+				<h2>Options</h2>
+				<p>bounce: true, flipBounceEasing: true, easing: "easeInSine"</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-custom-easing"></div>
+			<div class="info">
+				<h1>Custom Easing Function</h1>
+				<h2>Animate</h2>
+				<p>left: "12.5vw"</p>
+				<h2>Options</h2>
+				<p>easing: "cubic-bezier(0.68, -0.55, 0.265, 1.55)", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-scale"></div>
+			<div class="info">
+				<h1>Transform Scale</h1>
+				<h2>Animate:</h2>
+				<p>transform: "scale(2)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-rotate"></div>
+			<div class="info">
+				<h1>Transform Rotation</h1>
+				<h2>Animate:</h2>
+				<p>transform: "rotate(120deg)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-skewX"></div>
+			<div class="info">
+				<h1>Transform SkewX</h1>
+				<h2>Animate:</h2>
+				<p>transform: "skewX(0.523599rad)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-skewY"></div>
+			<div class="info">
+				<h1>Transform SkewY</h1>
+				<h2>Animate:</h2>
+				<p>transform: "skewY(0.1turn)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-translateX"></div>
+			<div class="info">
+				<h1>Transform TranslateX</h1>
+				<h2>Animate:</h2>
+				<p>transform: "translateX(3vw)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-translateY"></div>
+			<div class="info">
+				<h1>Transform TranslateY</h1>
+				<h2>Animate:</h2>
+				<p>transform: "translateY(-3vw)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-transform-origin"></div>
+			<div class="info">
+				<h1>Transform Origin</h1>
+				<h2>Animate:</h2>
+				<p>transformOrigin: "150px 0"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-rgb-color"></div>
+			<div class="info">
+				<h1>RGB Colour</h1>
+				<h2>Animate:</h2>
+				<p>backgroundColor: "rgb(0, 255, 0)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-hsl-color"></div>
+			<div class="info">
+				<h1>HSL Colour</h1>
+				<h2>Animate:</h2>
+				<p>backgroundColor: "hsl(120, 100%, 50%)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-border-radius"></div>
+			<div class="info">
+				<h1>Border Radius</h1>
+				<h2>Animate:</h2>
+				<p>borderRadius: "50%"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-multiple-elements"></div>
+			<div class="js-anim-target square js-multiple-elements"></div>
+			<div class="js-anim-target square js-multiple-elements"></div>
+			<div class="js-anim-target square js-multiple-elements"></div>
+			<div class="js-anim-target square js-multiple-elements"></div>
+			<div class="info">
+				<h1>Multiple Elements</h1>
+				<h2>Animate:</h2>
+				<p>backgroundColor: "rgb(0, 255, 0)", transform: "translateY(150%)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-multiple-staggered-elements"></div>
+			<div class="js-anim-target square js-multiple-staggered-elements"></div>
+			<div class="js-anim-target square js-multiple-staggered-elements"></div>
+			<div class="js-anim-target square js-multiple-staggered-elements"></div>
+			<div class="js-anim-target square js-multiple-staggered-elements"></div>
+			<div class="info">
+				<h1>Multiple Staggered Elements</h1>
+				<h2>Animate:</h2>
+				<p>backgroundColor: "rgb(0, 255, 0)", transform: "translateY(150%)"</p>
+				<h2>Options:</h2>
+				<p>stagger: 100, easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target scroller js-scroll-top">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit porta lorem, sed sollicitudin ipsum eleifend eu. Pellentesque dignissim sapien id odio interdum, in mattis turpis rutrum. Sed metus nunc, eleifend quis ornare sed, imperdiet in nulla. Suspendisse potenti. Aliquam sit amet odio orci. Duis non velit rhoncus, finibus ligula id, lobortis libero. Aenean sit amet eros eget enim rutrum ornare eget vitae diam. Donec dignissim nisl id quam eleifend, sit amet aliquam lacus posuere. Pellentesque ac posuere nunc. Vivamus elementum, lacus vitae pulvinar commodo, diam odio efficitur odio, eget fringilla est sem ac urna. Etiam elementum eros a odio facilisis scelerisque. Duis a nulla non turpis egestas lobortis vitae non augue. Donec id quam sed augue vehicula tempor sed vitae felis.</p>
+
+				<p>Quisque porttitor massa eu ullamcorper ornare. Nullam sodales volutpat imperdiet. Nam vehicula vel ex vel egestas. Nunc sem magna, elementum congue arcu id, consectetur suscipit nisl. Integer dapibus suscipit metus maximus pulvinar. Fusce bibendum ex sed turpis iaculis gravida. Curabitur tortor felis, ultrices nec maximus a, dictum vitae nibh. Fusce suscipit nisi mauris, non bibendum odio sagittis in.
+
+				<p>Phasellus id libero arcu. Quisque scelerisque, nibh a semper mattis, velit tellus lobortis quam, at semper magna quam non nisi. Sed nec luctus dui, in sagittis orci. Phasellus libero nisi, placerat sit amet sapien sed, ultrices commodo ligula. Cras iaculis venenatis accumsan. Curabitur rutrum, velit sed venenatis fermentum, justo felis volutpat ipsum, convallis imperdiet urna turpis ut sapien. Praesent ullamcorper ornare neque, a eleifend elit ornare eu. Sed auctor quis risus sit amet bibendum. Donec porttitor, massa vel fringilla venenatis, justo augue bibendum turpis, ut accumsan nibh turpis eget ante. Donec fringilla, nunc sit amet sollicitudin posuere, nisl dolor convallis sem, eu porta risus mauris ac lacus. Proin turpis ante, hendrerit sit amet turpis eu, finibus fringilla nisl. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut vulputate lectus diam, vitae suscipit metus sagittis et.</p>
+			</div>
+			<div class="info">
+				<h1>ScrollTop (div)</h1>
+				<h2>Animate:</h2>
+				<p>scrollTop: 300</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target square js-width"></div>
+			<div class="info">
+				<h1>Width</h1>
+				<h2>Animate:</h2>
+				<p>width: "50%"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target background-image js-background-position"></div>
+			<div class="info">
+				<h1>Background Position</h1>
+				<h2>Animate:</h2>
+				<p>backgroundPosition: "50% 100%"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg" class="js-anim-target square js-svg-element" viewBox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" fill="#000000"></rect>
+			</svg>
+			<div class="info">
+				<h1>SVG Element</h1>
+				<h2>Animate:</h2>
+				<p>transform: "rotate(30deg)"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg" class="js-anim-target square js-svg-child-element" viewBox="0 0 100 100">
+				<circle class="js-anim-target circle" cx="50" cy="50" r="50" fill="#000000" stroke="#000000"></rect>
+			</svg>
+			<div class="info">
+				<h1>SVG Child Element</h1>
+				<h2>Animate:</h2>
+				<p>fill: "#00FF00", strokeWidth: 10</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<article class="cell">
+			<div class="js-anim-target copy-block js-font-size" style="font-size: 1rem; text-align: center">Copy</div>
+			<div class="info">
+				<h1>Font Size</h1>
+				<h2>Animate:</h2>
+				<p>fontSize: "2em"</p>
+				<h2>Options:</h2>
+				<p>easing: "easeInOutQuad", bounce: true</p>
+			</div>
+		</article>
+
+		<script src="nation/Utils.js"></script>
+		<script src="nation/Animation.js"></script>
+
+		<script>
+			// Enable controls
+			var controls = document.documentElement.querySelector(".js-controls");
+			var playButton = controls.querySelector(".js-play-pause");
+			var modeButton = controls.querySelector(".js-mode");
+			var JSMode = false;
+			var playing = true;
+			var playCopy = playButton.getAttribute("data-alt");
+			var pauseCopy = playButton.innerHTML;
+			var jsCopy = modeButton.innerHTML;
+			var cssCopy = modeButton.getAttribute("data-alt");
+
+			playButton.addEventListener("click", function(e) {
+				if (playing) {
+					NATION.Animation.pause(elements);
+					playButton.innerHTML = playCopy;
+					playing = false;
+				} else {
+					NATION.Animation.resume(elements);
+					playButton.innerHTML = pauseCopy;
+					playing = true;
+				}
+			});
+
+			modeButton.addEventListener("click", function(e) {
+				if (JSMode) {
+					JSMode = false;
+					modeButton.innerHTML = jsCopy;
+					createAnimations();
+				} else {
+					JSMode = true;
+					modeButton.innerHTML = cssCopy;
+					createAnimations();
+				}
+				if (!playing) {
+					playButton.innerHTML = pauseCopy;
+					playing = true;
+				}
+			});
+
+
+			// Start all animations
+			var elements = document.documentElement.querySelectorAll(".js-anim-target");
+
+			function createAnimations() {
+				var element;
+				// Clear out existing styles and stop all animations
+				NATION.Animation.stop(elements);
+				for (var i = 0, length = elements.length; i < length; i++) {
+					elements[i].removeAttribute("style");
+					elements[i].scrollTop = 0;
+				}
+
+
+				requestAnimationFrame(function() {
+					// Delay
+					element = document.documentElement.querySelector(".js-delay-option");
+					NATION.Utils.setStyle(element, {left: "2.5vw"});
+					NATION.Animation.start(element, {left: "12.5vw"}, {
+						delay: 3000,
+						jsMode: JSMode
+					});
+
+					// Loop
+					element = document.documentElement.querySelector(".js-loop-option");
+					NATION.Utils.setStyle(element, {left: "2.5vw"});
+					NATION.Animation.start(element, {left: "12.5vw"}, {
+						loop: true,
+						jsMode: JSMode
+					});
+
+					// Bounce
+					element = document.documentElement.querySelector(".js-bounce-option");
+					NATION.Utils.setStyle(element, {left: "2.5vw"});
+					NATION.Animation.start(element, {left: "12.5vw"}, {
+						bounce: true,
+						flipBounceEasing: false,
+						easing: "easeInSine",
+						jsMode: JSMode
+					});
+
+					// Flip bounce easing
+					element = document.documentElement.querySelector(".js-bounce-easing");
+					NATION.Utils.setStyle(element, {left: "2.5vw"});
+					NATION.Animation.start(element, {left: "12.5vw"}, {
+						bounce: true,
+						flipBounceEasing: true,
+						easing: "easeInSine",
+						jsMode: JSMode
+					});
+
+					// Custom easing
+					element = document.documentElement.querySelector(".js-custom-easing");
+					NATION.Utils.setStyle(element, {left: "2.5vw"});
+					NATION.Animation.start(element, {left: "12.5vw"}, {
+						easing: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Transform scale
+					element = document.documentElement.querySelector(".js-scale");
+					NATION.Animation.start(element, {transform: "scale(2)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Transform rotation
+					element = document.documentElement.querySelector(".js-rotate");
+					NATION.Animation.start(element, {transform: " rotate(120deg)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Transform skewX
+					element = document.documentElement.querySelector(".js-skewX");
+					NATION.Animation.start(element, {transform: "skewX(0.523599rad)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Transform skewY
+					element = document.documentElement.querySelector(".js-skewY");
+					NATION.Animation.start(element, {transform: "skewY(0.1turn)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Transform translateX
+					element = document.documentElement.querySelector(".js-translateX");
+					NATION.Utils.setStyle(element, {transform: "translateX(-3vw)"});
+					NATION.Animation.start(element, {transform: "translateX(3vw)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Transform translateY
+					element = document.documentElement.querySelector(".js-translateY");
+					NATION.Utils.setStyle(element, {transform: "translateY(-3vw)"});
+					NATION.Animation.start(element, {transform: "translateY(3vw)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Transform origin
+					element = document.documentElement.querySelector(".js-transform-origin");
+					NATION.Utils.setStyle(element, {transform: "rotate(30deg)"});
+					NATION.Animation.start(element, {transformOrigin: "150px 0"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// RGB Colour
+					element = document.documentElement.querySelector(".js-rgb-color");
+					NATION.Animation.start(element, {backgroundColor: "rgb(0, 255, 0)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// HSL Colour
+					element = document.documentElement.querySelector(".js-hsl-color");
+					NATION.Animation.start(element, {backgroundColor: "hsl(120, 100%, 50%)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Border Radius
+					element = document.documentElement.querySelector(".js-border-radius");
+					NATION.Animation.start(element, {borderRadius: "50%"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Multiple elements at once
+					element = document.documentElement.querySelectorAll(".js-multiple-elements");
+					NATION.Utils.setStyle(element, {transform: "translateY(-150%)"});
+					NATION.Animation.start(element, {backgroundColor: "rgb(0, 255, 0)", transform: "translateY(150%)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Multiple elements with staggered delay
+					element = document.documentElement.querySelectorAll(".js-multiple-staggered-elements");
+					NATION.Utils.setStyle(element, {transform: "translateY(-150%)"});
+					NATION.Animation.start(element, {backgroundColor: "rgb(0, 255, 0)", transform: "translateY(150%)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						stagger: 100,
+						jsMode: JSMode
+					});
+
+					// Scroll Top (div)
+					element = document.documentElement.querySelectorAll(".js-scroll-top");
+					element.scrollTop = 0;
+					NATION.Animation.start(element, {scrollTop: 300}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Width
+					element = document.documentElement.querySelector(".js-width");
+					NATION.Animation.start(element, {width: "50%"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Background Position
+					element = document.documentElement.querySelector(".js-background-position");
+					NATION.Animation.start(element, {backgroundPosition: "50% 100%"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// SVG Element
+					element = document.documentElement.querySelector(".js-svg-element");
+					NATION.Animation.start(element, {transform: "rotate(30deg)"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+					
+					// SVG Child Element
+					element = document.documentElement.querySelector(".js-svg-child-element .circle");
+					NATION.Animation.start(element, {fill: "#00FF00", strokeWidth: 10}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+
+					// Font Size
+					element = document.documentElement.querySelector(".js-font-size");
+					NATION.Animation.start(element, {fontSize: "2em"}, {
+						easing: "easeInOutQuad",
+						bounce: true,
+						jsMode: JSMode
+					});
+				});
+			}
+
+			// Start animations
+			createAnimations();
+		</script>
+	</body>
+</html>

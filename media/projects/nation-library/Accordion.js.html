@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" charset="utf-8">
+    <title>Nation JavaScript Library v2</title>
+    <link rel="stylesheet" href="//getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="//getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="//getbootstrap.com/2.3.2/assets/css/docs.css">
+    <style>
+      body {
+      	padding-top: 0;
+      }
+      
+      a {
+      	color: #0c54d9;
+      	transition: color 0.1s linear;
+      }
+      a:hover {
+      	color: #333;
+      	text-decoration: none;
+      }
+      
+      .jumbotron {
+      	background: transparent linear-gradient(45deg, #0d398b 0%, #0c54d9 100%) repeat scroll 0% 0%;
+      }
+      
+      
+      body > .navbar .brand {
+      	float:left;
+      	text-shadow: rgba(255, 255, 255, 0.0980392) 0px 1px 0px, rgba(255, 255, 255, 0.4) 0px 0px 30px;
+      	color: white;
+      	margin-left:0px;
+      	font-weight:normal;
+      }
+      
+      .bs-docs-sidenav.affix {
+      	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+      	z-index: 10;
+      }
+      
+      .bs-docs-sidenav i{
+      	width: 8px;
+      	height: 8px;
+      	padding: 0px;
+      	margin: 0px;
+      	display: inline-block;
+      	margin-right:0.5em;
+      }
+      
+      .bs-docs-sidenav > li > a {
+      		word-wrap: break-word;
+      }
+      
+      .bs-docs-sidenav > li:first-child > a {
+      	border-top-right-radius: 6px;
+      	border-top-left-radius: 6px;
+      }
+      
+      code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas,Monaco,'Andale Mono',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#f5f2f0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:.7}.token.property,.token.tag,.token.boolean,.token.number{color:#905}.token.selector,.token.attr-name,.token.string{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}
+      div.description {margin: 14px 0; padding-top: 14px; padding-bottom: 14px; }
+      
+      p + section,
+      .description + section {
+      	margin-top: 25px;
+      	padding-top: 25px;
+      	border-top:1px solid #eee;
+      }
+      .tags {}
+      .ctx-type {
+      	display:inline-block;
+      	margin-right:0.5em;
+      	//- float:right; margin-top:8px
+      }
+      
+      .nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+      	background: #0c54d9;
+      }
+      
+      footer iframe{vertical-align:middle;}
+      
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".scrollspy">
+    <header id="overview" class="jumbotron subhead">
+      <div class="container">
+        <h1>Nation JavaScript Library v2</h1>
+        <p class="lead"></p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="span3 bs-docs-sidebar">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
+            <li><a href="index.html">Main</a></li>
+            <li class="active"><a href="Accordion.js.html">Accordion.js</a></li>
+            <li><a href="Animation.js.html">Animation.js</a></li>
+            <li><a href="audio/BasicAudioPlayer.js.html">audio/BasicAudioPlayer.js</a></li>
+            <li><a href="Dropdown.js.html">Dropdown.js</a></li>
+            <li><a href="EventDispatcher.js.html">EventDispatcher.js</a></li>
+            <li><a href="InfiniteScroll.js.html">InfiniteScroll.js</a></li>
+            <li><a href="MediaControls.js.html">MediaControls.js</a></li>
+            <li><a href="ProgressBar.js.html">ProgressBar.js</a></li>
+            <li><a href="Slideshow.js.html">Slideshow.js</a></li>
+            <li><a href="TiledSlideshow.js.html">TiledSlideshow.js</a></li>
+            <li><a href="Utils.js.html">Utils.js</a></li>
+            <li><a href="VerticalScrollbar.js.html">VerticalScrollbar.js</a></li>
+            <li><a href="video/BasicVideoPlayer.js.html">video/BasicVideoPlayer.js</a></li>
+            <li><a href="video/BasicYouTubePlayer.js.html">video/BasicYouTubePlayer.js</a></li>
+            <li><a href="video/StandardVideoPlayer.js.html">video/StandardVideoPlayer.js</a></li>
+            <li><a href="video/StandardYouTubePlayer.js.html">video/StandardYouTubePlayer.js</a></li>
+          </ul>
+          <div class="scrollspy">
+            <ul class="nav nav-list bs-docs-sidenav affix-top">
+              <li><a href="#Accordion"><i class="alert alert-info"></i><span>Accordion</span></a>
+              </li>
+              <li><a href="#PANEL_OPEN_COMPLETE"><i class="alert alert-success"></i><span>PANEL_OPEN_COMPLETE</span></a>
+              </li>
+              <li><a href="#PANEL_CLOSE_COMPLETE"><i class="alert alert-success"></i><span>PANEL_CLOSE_COMPLETE</span></a>
+              </li>
+              <li><a href="#HEADER_CLICKED"><i class="alert alert-success"></i><span>HEADER_CLICKED</span></a>
+              </li>
+              <li><a href="#PANEL_RESIZED"><i class="alert alert-success"></i><span>PANEL_RESIZED</span></a>
+              </li>
+              <li><a href="#getOpenPanelID"><i class="alert alert-info"></i><span>getOpenPanelID</span></a>
+              </li>
+              <li><a href="#getTotalSections"><i class="alert alert-info"></i><span>getTotalSections</span></a>
+              </li>
+              <li><a href="#openPanel"><i class="alert alert-info"></i><span>openPanel</span></a>
+              </li>
+              <li><a href="#closePanel"><i class="alert alert-info"></i><span>closePanel</span></a>
+              </li>
+              <li><a href="#enable"><i class="alert alert-info"></i><span>enable</span></a>
+              </li>
+              <li><a href="#disable"><i class="alert alert-info"></i><span>disable</span></a>
+              </li>
+              <li><a href="#setMaxPanelHeight"><i class="alert alert-info"></i><span>setMaxPanelHeight</span></a>
+              </li>
+              <li><a href="#refresh"><i class="alert alert-info"></i><span>refresh</span></a>
+              </li>
+              <li><a href="#destroy"><i class="alert alert-info"></i><span>destroy</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="span9">
+          <section id="Accordion">
+            <h1>Accordion</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>Accordion()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>selector</td>
+                <td>domelement_or_jqueryobject</td>
+                <td><p>The element that wraps the accordion contents, containing pairs of elements with classes &#39;js-header&#39;/&#39;header&#39; and &#39;js-content/content&#39;</p></td>
+              </tr>
+              <tr>
+                <td>options</td>
+                <td>object</td>
+                <td><p>Object contianing required options for this accordion<br /> <b>animateTransitions</b> <i>{boolean: true}</i> Indicates whether to open/close sections with animation using either NATION.Animation or jQuery, or not<br /><b>duration</b> <i>{number: 400}</i> The time a panel takes to animate open/closed<br /><b>easing</b> <i>{string: &quot;linear&quot;}</i> The easing function to use when opening and closing sections<br /><b>openPanel</b> <i>{number: -1}</i> Zero-indexed ID of the panel to have opened by default. If left at the default of -1, all sections will be initially closed<br /><b>maxPanelHeight</b> <i>{number: -1}</i> The maximum height a panel can open to before a scrollbar is enabled<br /><b>scrollbarTemplateID</b> <i>{string: &quot;&quot;}</i> An ID referencing a JavaScript template on the current page, containing the HTML for a scrollbar. Must contain classes &#39;js-scrollbar&#39;/&#39;scrollbar&#39;, &#39;js-track&#39;/&#39;track&#39;, and js-handle&#39;/&#39;handle&#39;. If left blank, the default template will be used<br /><b>enableMouseLock</b> <i>{boolean: false}</i> If true, scrolling the mousewheel when hovered over a panel with a scrollbar will not scroll the main page even when the panel&#39;s scrollbar is at the top or bottom<br /><b>autoScroll</b> <i>{boolean: false}</i> If true, the window will be automatically scrolled so that the clicked header is at the top of the viewport<br /><b>autoScrollOffset</b> <i>{number: 0}</i> If autoScroll is true, this number represents the distance from the top of the browser to stop at, in pixels</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><h3>Dependencies:</h3>
+<p><a href="Utils.js.html">NATION.Utils</a><br /><a href="EventDispatcher.js.html">NATION.EventDispatcher</a><br /><a href="VerticalScrollbar.js.html">NATION.VerticalScrollbar</a> if scrollbars required<br />Either <a href="Animation.js.html">NATION.Animation</a> or jQuery</p><h3>About:</h3>
+<p>A basic accordion with optional scrollbar support</p><p>Header/content pairs are identified by using the class &#39;js-header&#39; or &#39;header&#39; for the clickable titles, and &#39;js-content&#39; or &#39;content&#39; for the expandable content areas. These are generally expected to sit next to each other as siblings</p><p>Both the header element and the content element will have class &#39;active&#39; added to them when they are open. This allows for style changes to open panels/headers via CSS</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <h4>Example</h4>
+          <p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/NationStudio/dptkd4bp/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+          </p>
+          <section id="PANEL_OPEN_COMPLETE">
+            <h1>PANEL_OPEN_COMPLETE</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>Accordion.prototype.PANEL_OPEN_COMPLETE</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when a panel has finished opening</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="PANEL_CLOSE_COMPLETE">
+            <h1>PANEL_CLOSE_COMPLETE</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>Accordion.prototype.PANEL_CLOSE_COMPLETE</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when a panel has finished closing</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="HEADER_CLICKED">
+            <h1>HEADER_CLICKED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>Accordion.prototype.HEADER_CLICKED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when a header element has been clicked</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="PANEL_RESIZED">
+            <h1>PANEL_RESIZED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>Accordion.prototype.PANEL_RESIZED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires each frame of an open/close animation</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="getOpenPanelID">
+            <h1>getOpenPanelID</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.getOpenPanelID()</span> -><span>number</span>
+            </p>
+          </section>
+          <div class="description"><p>Returns the zero-indexed ID of the currently open panel. Returns -1 if no panel is currently open</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="getTotalSections">
+            <h1>getTotalSections</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.getTotalSections()</span> -><span>number</span>
+            </p>
+          </section>
+          <div class="description"><p>Returns the total number of clickable headers</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="openPanel">
+            <h1>openPanel</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.openPanel()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>index</td>
+                <td>number</td>
+                <td><p>The zero-indexed ID of the panel to open</p></td>
+              </tr>
+              <tr>
+                <td>immediate</td>
+                <td>boolean</td>
+                <td><p>If set to true, the panel will open without animation</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Open a panel by it&#39;s zero-indexed ID</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="closePanel">
+            <h1>closePanel</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.closePanel()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>index</td>
+                <td>number</td>
+                <td><p>The zero-indexed ID of the panel to close</p></td>
+              </tr>
+              <tr>
+                <td>immediate</td>
+                <td>boolean</td>
+                <td><p>If set to true, the panel will close without animation</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Close a panel by it&#39;s zero-indexed ID</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="enable">
+            <h1>enable</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.enable()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>reopenPanel</td>
+                <td>boolean</td>
+                <td><p>Keep open, or re-open, the panel that was last open when the disable method was called</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Re-enable accordion functionality. This will close all panels, except when reopenPanel is set to true, which will keep the previously open panel open.</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="disable">
+            <h1>disable</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.disable()</span>
+            </p>
+          </section>
+          <div class="description"><p>Disable all accordion functionality on the content. This opens all panels to their full height, and ignores clicks on header</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="setMaxPanelHeight">
+            <h1>setMaxPanelHeight</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.setMaxPanelHeight()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>The</td>
+                <td>eigh</td>
+                <td><p>new maximum height, in pixels</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Change the maximum possible height of a panel</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="refresh">
+            <h1>refresh</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.refresh()</span>
+            </p>
+          </section>
+          <div class="description"><p>Re-initialise the accordion. Useful if the content of the accordion<br />has been dynamically changed</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="destroy">
+            <h1>destroy</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Accordion.prototype.destroy()</span>
+            </p>
+          </section>
+          <div class="description"><p>Disable, remove all listeners, and kill off this instance of the class. Permanent!</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="https://leaverou.github.com/prefixfree/prefixfree.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-transition.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-dropdown.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-affix.js"></script>
+    <script>
+      /**
+       * Prism: Lightweight, robust, elegant syntax highlighting
+       * MIT license http://www.opensource.org/licenses/mit-license.php/
+       * @author Lea Verou http://lea.verou.me
+       */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data));l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r){return n.stringify(t.tokenize(e,r))},tokenize:function(e,n){var r=t.Token,i=[e],s=n.rest;if(s){for(var o in s)n[o]=s[o];delete n.rest}e:for(var o in n){if(!n.hasOwnProperty(o)||!n[o])continue;var u=n[o],a=u.inside,f=!!u.lookbehind||0;u=u.pattern||u;for(var l=0;l<i.length;l++){var c=i[l];if(i.length>e.length)break e;if(c instanceof r)continue;u.lastIndex=0;var h=u.exec(c);if(h){f&&(f=h[1].length);var p=h.index-1+f,h=h[0].slice(f),d=h.length,v=p+d,m=c.slice(0,p+1),g=c.slice(v+1),y=[l,1];m&&y.push(m);var b=new r(o,a?t.tokenize(h,a):h);y.push(b);g&&y.push(g);Array.prototype.splice.apply(i,y)}}}return i},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]"){for(var r=0;r<e.length;r++)e[r]=n.stringify(e[r]);return e.join("")}var i={type:e.type,content:n.stringify(e.content),tag:"span",classes:["token",e.type],attributes:{}};i.type=="comment"&&(i.attributes.spellcheck="true");t.hooks.run("wrap",i);var s="";for(var o in i.attributes)s+=o+'="'+(i.attributes[o]||"")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'" '+s+">"+i.content+"</"+i.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+      Prism.languages.markup={comment:/&lt;!--[\w\W]*?--(&gt;|&gt;)/g,prolog:/&lt;\?.+?\?&gt;/,doctype:/&lt;!DOCTYPE.+?&gt;/,cdata:/&lt;!\[CDATA\[[\w\W]+?]]&gt;/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?&gt;/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|&gt;|"/g}},punctuation:/\/?&gt;/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
+      Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:/@[\w-]+?(\s+[^;{]+)?(?=\s*{|\s*;)/gi,url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,property:/(\b|\B)[a-z-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
+      Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,number:/\b-?(0x)?\d*\.?[\da-f]+\b/g,operator:/[-+]{1,2}|!|=?&lt;|=?&gt;|={1,2}|(&amp;){1,2}|\|?\||\?|\*|\//g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};;
+      Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|catch|finally|null|break|continue)\b/g,number:/\b(-?(0x)?\d*\.?[\da-f]+|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});;
+      
+    </script>
+    <!-- App js-->
+    <script>
+      $(function(){
+      	var $window = $(window);
+      	$('.scrollspy .nav').affix({
+      		offset: {
+      			top: function () { return $window.width() <= 980 ? 480 : 400 }
+      		, bottom: 50
+      		}
+      	});
+      })
+    </script>
+  </body>
+</html>

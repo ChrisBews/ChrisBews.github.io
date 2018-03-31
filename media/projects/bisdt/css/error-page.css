@@ -1,0 +1,40 @@
+/*---------------------------------------------*/
+/* Error Message
+/*---------------------------------------------*/
+.site.gallery.error {
+	height: calc(100% - 80px);
+}
+
+.error-page {
+	display: table-row;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: #9a9a9a;
+}
+.error-page.background {
+	background: #9a9a9a url('../images/gallery/background.png') repeat 50% 0;
+}
+
+.error-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.error-page h1 {
+	margin: 0 20px;
+	padding-top: 0;
+	padding-bottom: 25px;
+	color: #343434;
+}
+
+.error-page p {
+	margin: 0 20px;
+}
+
+@media only screen and (max-width: 480px) {
+	.error-page,
+	.gerror-page.background {
+		background: #9a9a9a;
+	}
+}

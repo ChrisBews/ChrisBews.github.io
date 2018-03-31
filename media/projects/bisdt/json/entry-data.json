@@ -1,0 +1,79 @@
+{
+	"entries": [
+		{
+			"entryID": 23,
+			"entryPosition": 23,
+			"imageURL": "/sites/all/themes/bisdt/images/placeholders/entry-image.jpg",
+			"firstname": "Someone",
+			"surname": "Whatever",
+			"twitterURL": "",
+			"facebookURL": "",
+			"votes": 54,
+			"ranking": "none",
+			"votingClosed": false,
+			"shopLogo": "/sites/all/themes/bisdt/images/home/stores-logo-harrods.png",
+			"shopName": "Harrods",
+			"shopURL": "http://www.google.co.uk"
+		},
+		{
+			"entryID": 24,
+			"entryPosition": 24,
+			"imageURL": "/sites/all/themes/bisdt/images/placeholders/entry-image.jpg",
+			"firstname": "Someone",
+			"surname": "Whatever",
+			"twitterURL": "",
+			"facebookURL": "",
+			"votes": 54,
+			"ranking": "low",
+			"votingClosed": false,
+			"shopLogo": "/sites/all/themes/bisdt/images/home/stores-logo-harrods.png",
+			"shopName": "Harrods",
+			"shopURL": "http://www.google.co.uk"
+		},
+		{
+			"entryID": 25,
+			"entryPosition": 25,
+			"imageURL": "/sites/all/themes/bisdt/images/placeholders/entry-image.jpg",
+			"firstname": "Someone",
+			"surname": "Whatever",
+			"twitterURL": "",
+			"facebookURL": "",
+			"votes": 54,
+			"ranking": "medium",
+			"votingClosed": false,
+			"shopLogo": "/sites/all/themes/bisdt/images/home/stores-logo-harrods.png",
+			"shopName": "Harrods",
+			"shopURL": "http://www.google.co.uk"
+		},
+		{
+			"entryID": 1,
+			"entryPosition": 1,
+			"imageURL": "/sites/all/themes/bisdt/images/placeholders/entry-image.jpg",
+			"firstname": "Someone",
+			"surname": "Whatever",
+			"twitterURL": "",
+			"facebookURL": "",
+			"votes": 54,
+			"ranking": "high",
+			"votingClosed": false,
+			"shopLogo": "/sites/all/themes/bisdt/images/home/stores-logo-harrods.png",
+			"shopName": "Harrods",
+			"shopURL": "http://www.google.co.uk"
+		},
+		{
+			"entryID": 2,
+			"entryPosition": 2,
+			"imageURL": "/sites/all/themes/bisdt/images/placeholders/entry-image.jpg",
+			"firstname": "Someone",
+			"surname": "Whatever",
+			"twitterURL": "",
+			"facebookURL": "",
+			"votes": 54,
+			"ranking": "low",
+			"votingClosed": false,
+			"shopLogo": "/sites/all/themes/bisdt/images/home/stores-logo-harrods.png",
+			"shopName": "Harrods",
+			"shopURL": "http://www.google.co.uk"
+		}
+	]
+}

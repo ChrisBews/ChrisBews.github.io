@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Barbour International Six Days Trial</title>
+		<link rel="stylesheet" media="all" href="css/global.css" />
+		<link rel="stylesheet" media="all" href="css/home.css" />
+		<link rel="stylesheet" media="all" href="css/gallery.css" />
+		<link rel="stylesheet" media="all" href="css/entry.css" />
+		<link rel="stylesheet" media="all" href="css/error-page.css" />
+		<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-57x57-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-72x72-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-76x76-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-114x114-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-120x120-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-144x144-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-152x152-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-180x180-precomposed.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="192x192" href="/sites/all/themes/bisdt/images/global/apple-touch-icon-192x192-precomposed.png">
+	</head>
+	<body>
+		<!--
+			// Add class 'error' if we're on an error page, such as 404, no search results
+			// Add class 'gallery' if we're on the gallery page
+		-->
+		<div class="site gallery" data-module="PageManager">
+			<header class="site-header" data-module="Header">
+				<div class="header-content">
+					<div class="content">
+						<h1 class="logo"><a href="#"><img src="images/global/logo.png" alt="Barbour International" /></a></h1>
+						<a href="#" class="menu-button" data-close-copy="Close"><span class="label">Menu</span></a>
+						<div class="main-menu">
+							<div class="scrollable-content">
+								<div class="content">
+									<nav class="site-nav">
+										<h1 class="extra">Explore the site</h1>
+										<ul>
+											<li><a href="index.html#enter" class="active">The competition</a></li>
+											<li><a href="gallery.html">The gallery</a></li>
+										</ul>
+									</nav>
+									<aside class="social">
+										<h1 class="extra">Share:</h1>
+										<ul>
+											<li><a href="#" class="twitter"><span>Twitter</span></a></li>
+											<li><a href="#" class="facebook"><span>Facebook</span></a></li>
+										</ul>
+									</aside>
+									<a href="http://www.barbour.com" target="_blank" class="external-site">Visit Barbour.com</a>
+								</div>
+							</div>
+							<div class="scrollbar">
+								<div class="track"></div>
+								<div class="handle"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</header>
+
+	<section class="single-entry" data-has-background data-module="EntrySlideshow">
+		<!--
+			// The entry JS template expects PHP to fill in the total number of entries.
+			// Look for '<span class="total">TOTAL</span>' and replace 'TOTAL' with
+			// the correct number of entries.
+		-->
+		<script type="text/js-template" id="entry-template">
+			<article class="entry" data-entry-id="{{entryID}}" data-vote-count="{{votes}}" data-vote-ranking="{{ranking}}" data-voting-closed="{{votingClosed}}">
+				<h1 class="extra">Entry by {{firstname}}</h1>
+				<figure>
+					<figcaption>
+						<p><span class="author">{{firstname}}</span> needs your vote</p>
+						<p class="entry-number">Swipe image to view more</p>
+					</figcaption>
+					<div class="media">
+						<img src="{{imageURL}}" alt="" />
+						<div class="overlay"></div>
+					</div>
+				</figure>
+				<div class="image-details">
+					<div class="share-options">
+						<h2>Share this entry:</h2>
+						<ul>
+							<li><a href="{{twitterURL}}" class="twitter"><span>Twitter</span></a></li>
+							<li><a href="{{facebookURL}}" class="facebook"><span>Facebook</span></a></li>
+						</ul>
+					</div>
+					<div class="vote">
+						<h2 class="extra">Vote</h2>
+						<div class="count">
+
+						</div>
+						<div class="vote-button">
+							<a href="#" class="basic-button highlighted" data-success="Voted">Vote<span class="extra-label"> for entry</span></a>
+						</div>
+					</div>
+					<div class="location">
+						<h2>Taken at:</h2>
+						<a href="{{shopURL}}" target="_blank" class="store-logo">
+							<img src="{{shopLogo}}" alt="{{shopName}}" />
+						</a>
+					</div>
+				</div>
+			</article>
+		</script>
+
+		<script type="text/js-template" id="dial-template">
+			<div class="dial">
+				<div class="bg-circle">
+					<svg width="93" height="93" version="1.2">
+						<circle style="fill:#343434;" cx="46.6" cy="46.5" r="44.6"/>
+						<circle style="fill:none;stroke:#FFFFFF;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="46.6" cy="46.5" r="44.6"/>
+					</svg>
+				</div>
+
+				<div class="dial-progress">
+					<svg width="93" height="93" version="1.2">
+						<g transform="translate(0, -4)">
+							<g>
+								<path style="fill:#8A8A8A;" d="M46.5,49.5l28.3,11.8c1.4-3.5,2.2-7.3,2.2-11.4c0-16.8-13.7-30.4-30.7-30.4c-16.9,0-30.7,13.6-30.7,30.4c0,4,0.8,7.9,2.2,11.4L46.5,49.5z"/>
+							</g>
+						</g>
+					</svg>
+				</div>
+
+				<div class="dial-progress-mask">
+					<svg width="93" height="93" version="1.2">
+						<g transform="translate(0, -4)">
+							<g>
+								<path style="fill:#343434;" d="M46.5,49.5L15.7,62.2c0,0,6.2,20.1,30.6,20.1s30.3-20.2,30.3-20.2L46.5,49.5z"/>
+							</g>
+						</g>
+					</svg>
+				</div>
+
+				<div class="dial-progress-cover">
+					<svg width="93" height="93" version="1.2">
+						<g transform="translate(0, -4)">
+							<g>
+								<path style="fill:#343434;" d="M17.6,61.4l28.9-11.9l28.5,11.9c0,0-7.1,19.3-28.5,19.3S17.6,61.4,17.6,61.4z"/>
+							</g>
+						</g>
+					</svg>
+				</div>
+
+				<div class="dial-white-lines">
+					<svg width="93" height="93" version="1.2">
+						<!-- White detail lines -->
+						<g transform="translate(0, -2)">
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M24.3,26.3L21,23c-3.3,3.3-6,7.2-7.8,11.6l4.3,1.8C19.2,32.6,21.5,29.2,24.3,26.3z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,17.2v-4.7c-4.9,0-9.5,1-13.7,2.7l1.8,4.3C38.2,18,42.2,17.2,46.4,17.2z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M68.5,26.3l3.3-3.3c-3.3-3.3-7.2-6-11.6-7.8l-1.8,4.3C62.2,21.1,65.6,23.4,68.5,26.3z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M34.5,19.5l-1.8-4.3C28.3,17,24.4,19.7,21,23l3.3,3.3C27.2,23.4,30.7,21.1,34.5,19.5z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M58.4,19.5l1.8-4.3c-4.2-1.8-8.9-2.7-13.8-2.7v4.7C50.7,17.2,54.7,18,58.4,19.5z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M75.3,36.4l4.3-1.8c-1.8-4.4-4.5-8.4-7.8-11.7l-3.3,3.3C71.4,29.2,73.7,32.6,75.3,36.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M77.6,48.4h4.7c0-4.9-1-9.5-2.7-13.7l-4.3,1.8C76.8,40.1,77.6,44.1,77.6,48.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M75.3,60.3l4.3,1.8c1.8-4.2,2.7-8.9,2.7-13.8h-4.7C77.6,52.6,76.8,56.7,75.3,60.3z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M17.6,36.4l-4.3-1.8c-1.8,4.2-2.7,8.9-2.7,13.8h4.7C15.2,44.1,16.1,40.1,17.6,36.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M15.2,48.4h-4.7c0,4.9,1,9.5,2.7,13.7l4.3-1.8C16,56.6,15.2,52.6,15.2,48.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,48.4L46.4,48.4l28.9-11.9c-1.6-3.8-3.9-7.3-6.8-10.2L46.4,48.4L46.4,48.4z"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,48.4h31.2c0-4.2-0.8-8.2-2.4-11.9L46.4,48.4L46.4,48.4z"/>
+							<rect x="46.4" y="48.4" style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="0" height="0"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<rect x="46.4" y="48.4" style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="0" height="0"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<polygon style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="46.4,48.4 46.4,48.4 46.4,48.4"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,48.4L24.3,26.3c-2.9,2.9-5.2,6.3-6.8,10.1L46.4,48.4L46.4,48.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,48.4l28.8,12c1.5-3.7,2.4-7.7,2.4-12H46.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M68.5,26.3c-2.9-2.9-6.3-5.2-10.1-6.8l-12,28.8L68.5,26.3z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,48.4V17.2c-4.2,0-8.2,0.8-11.9,2.4L46.4,48.4L46.4,48.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M34.5,19.5c-3.8,1.6-7.3,3.9-10.2,6.8l22.1,22.1L34.5,19.5z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,48.4l12-28.8c-3.7-1.5-7.7-2.4-12-2.4V48.4L46.4,48.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,48.4H15.2c0,4.2,0.8,8.2,2.4,11.9L46.4,48.4L46.4,48.4z"/>
+							<path style="fill:none;stroke:#F7F7F7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M46.4,48.4L46.4,48.4l-28.8-12c-1.5,3.7-2.4,7.7-2.4,12H46.4L46.4,48.4z"/>
+							<line style="fill:none;stroke:#F7F7F7;stroke-width:6;stroke-miterlimit:10;" x1="17.6" y1="36.4" x2="13.3" y2="34.6"/>
+							<polyline style="fill:#FFFFFF;stroke:#F7F7F7;stroke-miterlimit:10;" points="13.3,62.1 12.1,59.3 16.4,57.5 17.6,60.3"/>
+							<line style="fill:none;stroke:#F7F7F7;stroke-width:6;stroke-miterlimit:10;" x1="32.7" y1="15.2" x2="34.5" y2="19.5"/>
+							<line style="fill:none;stroke:#F7F7F7;stroke-width:6;stroke-miterlimit:10;" x1="60.2" y1="15.2" x2="58.4" y2="19.5"/>
+							<line style="fill:none;stroke:#F7F7F7;stroke-width:6;stroke-miterlimit:10;" x1="79.6" y1="34.7" x2="75.3" y2="36.4"/>
+							<polyline style="fill:#FFFFFF;stroke:#F7F7F7;stroke-miterlimit:10;" points="75.3,60.3 76.4,57.6 80.7,59.4 79.6,62.1"/>
+						</g>
+					</svg>
+				</div>
+
+				<div class="dial-arrow">
+					<svg width="93" height="93" version="1.2">
+						<g transform="translate(12, 40)">
+							<g>
+								<path style="fill:#FDC634;" d="M33.4,0.3c-2.4,0-4.4,1.4-5.2,3.5c-1.5,0-3.2,0-5.1,0.1c-1.9,0.1-3.9,0.1-6,0.2c-2,0.1-4.1,0.1-6,0.3
+	C9.3,4.3,7.5,4.5,6,4.6C2.9,4.8,0.9,5,0.9,5C0.4,5,0.1,5.4,0,5.9C-0.1,6.4,0.3,6.9,0.9,7c0,0,2,0.2,5.1,0.4c1.5,0.1,3.3,0.2,5.2,0.3
+	c1.9,0.1,3.9,0.2,6,0.3c2,0.1,4.1,0.1,6,0.2c1.8,0.1,3.6,0,5.1,0.1c0.9,2,2.9,3.5,5.2,3.5c3.1,0,5.7-2.5,5.7-5.7
+	C39.1,2.9,36.6,0.3,33.4,0.3z"/>
+							</g>
+						</g>
+					</svg>
+				</div>
+
+				<div class="milage">
+					<div class="digit">
+						<span>0</span>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+					</div>
+					<div class="digit">
+						<span>0</span>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+					</div>
+					<div class="digit">
+						<span>0</span>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+					</div>
+					<div class="digit">
+						<span>0</span>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+					</div>
+					<div class="digit">
+						<span>0</span>
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<h1 class="extra">Entry Browser</h1>
+		<a href="gallery.html" class="list-button"><span>Back to gallery</span></a>
+		<!--<p class="slideshow-instructions">Swipe the image below to view more entries</p>-->
+		<!--
+			// data-total: Total entries available (not expected to be zero-indexed)
+			// data-url: URI to the script that outputs a JSON file. Check
+			//   json/entry-data.json for the expected content
+			//   of the json file.
+			// 	 {lastid} will be replaced with the last loaded post ID (not to be included in the new results, just those after/before)
+			//	 {count} Number of posts required
+			//	 {direction} Either 'next' or 'previous'
+			//	 -	'next' would mean '5 posts after post 22', eg. '23,24,25,26,27' in the case of 'lastid' being '22'
+			//	 -	'previous' would mean '5 posts before post 22'. This would be reversed and decending, eg. 21, 20, 19, 18, 17 in the case of 'lastid' being '22'
+			//	 If when retrieving 5 posts, and the last post is reached before we've got 5 entries, loop back to the start
+			//	 and give first post, second post etc. Same with going in the other direction
+			// !!! NOTE: !!! The actual post IDs don't have to be properly sequential. Just give the 'five before' or 'five after', and be honest with the post IDs (they're not used in the maths, just for deep links and tings)
+			// Example static JSON file: json/entry-data.json?lastid={lastid}&count={count}&direction={direction}
+			// data-vote-url: URI to the script that handles voting. {id} will be replaced with the true Drupal post ID
+
+			// function go get the total number of entries: echo _bisdt_count_entries();
+			// $count = variable_get('entries_per_page','5');
+
+		-->
+		<div class="gallery-slideshow" data-total="30" data-url="/php/testJSON.php?lastid={lastid}&count={count}&direction={direction}" data-vote-url="#?id={id}">
+			<a href="#" class="sticker-promo" draggable="false">Win 1 of 6 limited edition outfits!</a>
+			<!--
+				// There is expected to be 5 slides here initially. The 'current' slide
+				// is slide 3. So if the 'current' slide is the first entry, then slide 2
+				// will be the last entry, and slide 1 will be the second to last entry.
+				// This is to allow looping through entries.
+				// For each of these initial entries:
+				// data-entry-id: The actual post ID of the entry
+				// data-vote-count: This should be the number of votes
+				// data-vote-ranking: 'none', 'low', 'medium', or 'high'
+				// data-voting-closed: Either "true" or "false"
+			-->
+			<div class="slides">
+				<article class="entry" data-entry-id="28" data-vote-count="0" data-vote-ranking="none" data-voting-closed="true">
+					<h1 class="extra">Entry by George J Phillips</h1>
+					<figure>
+						<figcaption>
+							<p><span class="author">George</span> needs your vote</p>
+							<p class="entry-number">Swipe image to view more</p>
+						</figcaption>
+						<div class="media">
+							<img src="images/placeholders/entry-image.jpg" alt="" />
+							<div class="overlay"></div>
+						</div>
+					</figure>
+					<div class="image-details">
+						<div class="share-options">
+							<h2>Share this entry:</h2>
+							<ul>
+								<li><a href="#" class="twitter"><span>Twitter</span></a></li>
+								<li><a href="#" class="facebook"><span>Facebook</span></a></li>
+							</ul>
+						</div>
+						<div class="vote">
+							<h2 class="extra">Vote</h2>
+							<div class="count">
+
+							</div>
+							<div class="vote-button">
+								<!--
+									// Copy for 'closed' and 'voted' states can be set in these attributes:
+									// data-success: User has voted copy
+									// data-closed: Voting for this item is closed, this copy shows
+								-->
+								<a href="#" class="basic-button highlighted closed" data-success="Voted" data-closed="Closed">Vote<span class="extra-label"> for entry</span></a>
+							</div>
+						</div>
+						<div class="location">
+							<h2>Taken at:</h2>
+							<a href="#" target="_blank" class="store-logo">
+								<img src="images/home/stores-logo-harrods.png" alt="Harrods" />
+							</a>
+						</div>
+					</div>
+				</article>
+				<article class="entry" data-entry-id="29" data-vote-count="138" data-vote-ranking="medium" data-voting-closed="true">
+					<h1 class="extra">Entry by George J Phillips</h1>
+					<figure>
+						<figcaption>
+							<p><span class="author">George</span> needs your vote</p>
+							<p class="entry-number">Swipe image to view more</p>
+						</figcaption>
+						<div class="media">
+							<img src="images/placeholders/entry-image.jpg" alt="" />
+							<div class="overlay"></div>
+						</div>
+					</figure>
+					<div class="image-details">
+						<div class="share-options">
+							<h2>Share this entry:</h2>
+							<ul>
+								<li><a href="#" class="twitter"><span>Twitter</span></a></li>
+								<li><a href="#" class="facebook"><span>Facebook</span></a></li>
+							</ul>
+						</div>
+						<div class="vote">
+							<h2 class="extra">Vote</h2>
+							<div class="count">
+
+							</div>
+							<div class="vote-button">
+								<a href="#" class="basic-button highlighted" data-success="Voted">Vote<span class="extra-label"> for entry</span></a>
+							</div>
+						</div>
+						<div class="location">
+							<h2>Taken at:</h2>
+							<a href="#" target="_blank" class="store-logo">
+								<img src="images/home/stores-logo-harrods.png" alt="Harrods" />
+							</a>
+						</div>
+					</div>
+				</article>
+				<article class="entry" data-entry-id="30" data-vote-count="128" data-vote-ranking="low" data-voting-closed="true">
+					<h1 class="extra">Entry by George J Phillips</h1>
+					<figure>
+						<figcaption>
+							<p><span class="author">George</span> needs your vote</p>
+							<p class="entry-number">Swipe image to view more</p>
+						</figcaption>
+						<div class="media">
+							<img src="images/placeholders/entry-image.jpg" alt="" />
+							<div class="overlay"></div>
+						</div>
+					</figure>
+					<div class="image-details">
+						<div class="share-options">
+							<h2>Share this entry:</h2>
+							<ul>
+								<li><a href="#" class="twitter"><span>Twitter</span></a></li>
+								<li><a href="#" class="facebook"><span>Facebook</span></a></li>
+							</ul>
+						</div>
+						<div class="vote">
+							<h2 class="extra">Vote</h2>
+							<div class="count">
+
+							</div>
+							<div class="vote-button">
+								<!--
+									// Copy for 'closed' and 'voted' states can be set in these attributes:
+									// data-success: User has voted copy
+									// data-closed: Voting for this item is closed, this copy shows
+								-->
+								<a href="#" class="basic-button highlighted closed" data-success="Voted" data-closed="Closed">Vote<span class="extra-label"> for entry</span></a>
+							</div>
+						</div>
+						<div class="location">
+							<h2>Taken at:</h2>
+							<a href="#" target="_blank" class="store-logo">
+								<img src="images/home/stores-logo-harrods.png" alt="Harrods" />
+							</a>
+						</div>
+					</div>
+				</article>
+				<article class="entry" data-entry-id="1" data-vote-count="118" data-vote-ranking="medium" data-voting-closed="true">
+					<h1 class="extra">Entry by George J Phillips</h1>
+					<figure>
+						<figcaption>
+							<p><span class="author">George</span> needs your vote</p>
+							<p class="entry-number">Swipe image to view more</p>
+						</figcaption>
+						<div class="media">
+							<img src="images/placeholders/entry-image.jpg" alt="" />
+							<div class="overlay"></div>
+						</div>
+					</figure>
+					<div class="image-details">
+						<div class="share-options">
+							<h2>Share this entry:</h2>
+							<ul>
+								<li><a href="#" class="twitter"><span>Twitter</span></a></li>
+								<li><a href="#" class="facebook"><span>Facebook</span></a></li>
+							</ul>
+						</div>
+						<div class="vote">
+							<h2 class="extra">Vote</h2>
+							<div class="count">
+
+							</div>
+							<div class="vote-button">
+								<!--
+									// Copy for 'closed' and 'voted' states can be set in these attributes:
+									// data-success: User has voted copy
+									// data-closed: Voting for this item is closed, this copy shows
+								-->
+								<a href="#" class="basic-button highlighted closed" data-success="Voted" data-closed="Closed">Vote<span class="extra-label"> for entry</span></a>
+							</div>
+						</div>
+						<div class="location">
+							<h2>Taken at:</h2>
+							<a href="#" target="_blank" class="store-logo">
+								<img src="images/home/stores-logo-harrods.png" alt="Harrods" />
+							</a>
+						</div>
+					</div>
+				</article>
+				<article class="entry" data-entry-id="2" data-vote-count="108" data-vote-ranking="high" data-voting-closed="true">
+					<h1 class="extra">Entry by George J Phillips</h1>
+					<figure>
+						<figcaption>
+							<p><span class="author">George</span> needs your vote</p>
+							<p class="entry-number">Swipe image to view more</p>
+						</figcaption>
+						<div class="media">
+							<img src="images/placeholders/entry-image.jpg" alt="" />
+							<div class="overlay"></div>
+						</div>
+					</figure>
+					<div class="image-details">
+						<div class="share-options">
+							<h2>Share this entry:</h2>
+							<ul>
+								<li><a href="#" class="twitter"><span>Twitter</span></a></li>
+								<li><a href="#" class="facebook"><span>Facebook</span></a></li>
+							</ul>
+						</div>
+						<div class="vote">
+							<h2 class="extra">Vote</h2>
+							<div class="count">
+
+							</div>
+							<div class="vote-button">
+								<!--
+									// Copy for 'closed' and 'voted' states can be set in these attributes:
+									// data-success: User has voted copy
+									// data-closed: Voting for this item is closed, this copy shows
+								-->
+								<a href="#" class="basic-button highlighted closed" data-success="Voted" data-closed="Closed">Vote<span class="extra-label"> for entry</span></a>
+							</div>
+						</div>
+						<div class="location">
+							<h2>Taken at:</h2>
+							<a href="#" target="_blank" class="store-logo">
+								<img src="images/home/stores-logo-harrods.png" alt="Harrods" />
+							</a>
+						</div>
+					</div>
+				</article>
+			</div>
+			<ul class="navigation">
+				<li><a href="#" class="previous"><div class="arrow"></div><span>Previous</span></a></li>
+				<li><a href="#" class="next"><div class="arrow"></div><span>Next</span></a></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="newsletter" data-has-background data-module="NewsletterForm">
+		<h1 class="extra">Win a goodie bag</h1>
+
+		<div class="section-content">
+			<div class="column">
+				<!--
+					// The responsive image class has been updated to match the srcset spec, so the arguments for these have changed
+					// data-path can either be the path to all images, or left out entirely
+					// data-src: The largest image to be used on the site (generally desktops show this one)
+					// data-srcset: Series of images, and the max width at which to show them. You only need to change the images, the size arguments are correct in static builds
+				-->
+				<div class="media">
+					<img alt="" data-responsive-image data-path="images/placeholders/" data-src="newsletter.jpg" data-srcset="newsletter-mobile.jpg 640w" />
+				</div>
+			</div>
+			<div class="column">
+				<h2>Win a goodie bag</h2>
+				<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				<!--
+					// Action and method are used by JavaScript as they're set here
+				-->
+				<form action="#" method="post">
+					<fieldset>
+						<label for="email" class="extra">Enter your email address</label>
+						<input type="text" name="email" id="email" placeholder="Your Email Address" data-required />
+					</fieldset>
+					<fieldset class="checkboxes">
+						<div class="checkbox-label">
+							<input type="checkbox" name="newsletter" id="newsletter" data-required />
+							<p class="label">Maecenas sed diam eget <a href="#" target="_blank">risus varius blandit sit.</a></p>
+						</div>
+						<div class="checkbox-label">
+							<input type="checkbox" name="other" id="other" />
+							<p class="label">Maecenas sed diam eget risus varius blandit sit.</p>
+						</div>
+					</fieldset>
+					<p class="errors"><span>Please enter valid email address and accept the terms and conditions.</span></p>
+					<input type="submit" value="Enter" class="basic-button" />
+				</form>
+				<div class="complete">
+					<h3>Thanks for entering the competition</h3>
+					<p>Praesent commodo cursus magna, vel scelerisque nisl
+consectetur et. Cras mattis Porta Mollis Mattis.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+			<footer class="site-footer">
+				<div class="content">
+					<h1 class="extra">Legal Information</h1>
+					<ul class="">
+						<li><a href="#">Terms &amp; Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Cookie Policy</a></li>
+						<li>Barbour &copy;</li>
+					</ul>
+					<a href="#" target="_blank" class="external">Visit Barbour.com</a>
+				</div>
+			</footer>
+		</div>
+
+		<!--
+			// Google Analytics tracking code
+		-->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-45749518-12', 'auto');
+			ga('send', 'pageview');
+
+		</script>
+
+		<!--
+			// Leave this conditional one in for IE, it's not in the compiled JS
+		-->
+		<!--[if lte IE 9]>
+			<script src="/sites/all/themes/bisdt/js/libs/history.iegte8.min.js"></script>
+		<![endif]-->
+
+		<!--<script src="/sites/all/themes/bisdt/js/nation/Utils.js"></script>
+		<script src="/sites/all/themes/bisdt/js/nation/Animation.js"></script>
+		<script src="/sites/all/themes/bisdt/js/nation/InfiniteScroll.js"></script>
+		<script src="/sites/all/themes/bisdt/js/nation/ResponsiveImages.js"></script>
+		<script src="/sites/all/themes/bisdt/js/nation/VerticalScrollbar.js"></script>
+		<script src="/sites/all/themes/bisdt/js/nation/EventDispatcher.js"></script>
+		<script src="/sites/all/themes/bisdt/js/nation/Slideshow.js"></script>
+
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/PageManager/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/PageManager/models/Settings.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/PageManager/models/Events.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/PageManager/models/Tracking.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/PageManager/models/History.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/Header/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/Header/views/SlidingMenuView.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/Countdown/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/Countdown/models/TimeModel.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/Countdown/views/TimeRemainingView.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/Slideshow/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/EntrySlideshow/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/EntrySlideshow/models/SlideshowModel.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/EntrySlideshow/views/SlideshowView.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/EntrySlideshow/views/SpeedometerView.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/NewsletterForm/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/NewsletterForm/models/SubscriptionModel.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/NewsletterForm/views/FormView.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/GallerySearch/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/GallerySearch/views/SearchFormView.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/GalleryListing/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/VerticalSections/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/VerticalSections/views/SectionsView.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/TopEntries/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/StoreList/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/modules/EnterGuide/Controller.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/Mediator.js"></script>
+		<script src="/sites/all/themes/bisdt/js/bisdt/Router.js"></script>-->
+
+		<!--
+			// Ignore the JS files above (other than the IE one) and just include this compiled one
+		-->
+		<script src="compiled/bisdt.js"></script>
+	</body>
+</html>

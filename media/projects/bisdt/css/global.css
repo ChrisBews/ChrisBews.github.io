@@ -1,0 +1,658 @@
+/*---------------------------------------------*/
+/* Fonts
+/*---------------------------------------------*/
+@font-face {
+	font-family: 'ProximaNovaRegular';
+	src: url('../fonts/proxima/ProximaNova-Reg-webfont.eot');
+	src: url('../fonts/proxima/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/proxima/ProximaNova-Reg-webfont.woff') format('woff'),
+		url('../fonts/proxima/ProximaNova-Reg-webfont.ttf') format('truetype'),
+		url('../fonts/proxima/ProximaNova-Reg-webfont.svg#ProximaNovaRegular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNovaRegular';
+	src: url('../fonts/proxima/proximanova-bold-webfont.eot');
+	src: url('../fonts/proxima/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/proxima/proximanova-bold-webfont.woff') format('woff'),
+		url('../fonts/proxima/proximanova-bold-webfont.ttf') format('truetype'),
+		url('../fonts/proxima/proximanova-bold-webfont.svg#ProximaNovaBold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNovaCondensed';
+	src: url('../fonts/proxima/proximanovacond-regular-webfont.eot');
+	src: url('../fonts/proxima/proximanovacond-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/proxima/proximanovacond-regular-webfont.woff') format('woff'),
+		url('../fonts/proxima/proximanovacond-regular-webfont.ttf') format('truetype'),
+		url('../fonts/proxima/proximanovacond-regular-webfont.svg#ProximaNovaCondenced') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'myfontregular';
+	src: url('../fonts/iconfont/myfont.eot');
+	src: url('../fonts/iconfont/myfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iconfont/myfont.woff') format('woff'),
+		url('../fonts/iconfont/myfont.ttf') format('truetype'),
+		url('../fonts/iconfont/myfont.svg#ProximaNovaCondenced') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+/*---------------------------------------------*/
+/* Core Styles
+/*---------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup, tt, var,
+b, u, i, textarea, button,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, .comments, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	color: #fff;
+	font-size: 100%;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Courier New Regular", "Courier New", Courier, monospace;
+}
+
+.site {
+	padding-top: 80px;
+}
+
+.site.gallery,
+.site.error {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.extra {
+	display: none;
+}
+
+img, svg {
+	vertical-align: top;
+	border: 0;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h1, h2 {
+	font-family: "ProximaNovaRegular", Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+p {
+	font-size: 1.125em;
+	line-height: 1.75em;
+}
+
+a:active {
+	background: transparent;
+}
+
+/* Hides images until they have a src value (makes responsive images less ugly) */
+img {
+	display: none;
+}
+
+img[src] {
+	display: inline;
+}
+
+.section-content {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+::-moz-selection {
+	color: #fff;
+	background: rgba(52, 52, 52, 0.9);
+	text-shadow: none;
+}
+
+::selection {
+	color: #fff;
+	background: rgba(52, 52, 52, 0.9);
+	text-shadow: none;
+}
+
+
+input, textarea {
+	-webkit-appearance: none;
+}
+
+*::-webkit-input-placeholder {
+	color: #343434;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #343434;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #343434;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #343434;
+	opacity: 1;
+}
+
+@media only screen and (max-width: 640px) {
+	h1 {
+		font-size: 1.875em;
+	}
+
+	p {
+		line-height: 1.563em;
+	}
+}
+
+/*---------------------------------------------*/
+/* Common UI
+/*---------------------------------------------*/
+.basic-button {
+	display: inline-block;
+	margin: 0;
+	padding: 11px 18px;
+	color: #fff;
+	font-size: 1.25em;
+	font-family: "ProximaNovaRegular", Arial, sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #343434;
+	border: transparent;
+	border-radius: 3px;
+	webkit-transition: background 0.1s linear;
+	transition: background 0.1s linear;
+}
+
+.basic-button:hover {
+	background: #646464;
+}
+
+.basic-button.highlighted {
+	color: #343434;
+	background: #fff;
+}
+
+.basic-button.highlighted:hover {
+	background: #727272;
+}
+
+@media only screen and (max-width: 800px) {
+	.mobile .basic-button {
+		padding: 19px 18px 24px 18px;
+	}
+}
+
+/*---------------------------------------------*/
+/* Header
+/*---------------------------------------------*/
+
+.header-content {
+	background: #fec831;
+}
+
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 2000;
+}
+
+.site-header .content {
+	display: table;
+	width: 100%;
+	font-family: "ProximaNovaRegular", Arial, sans-serif;
+}
+
+.site-header .logo {
+	display: table-cell;
+	width: 120px;
+	padding: 10px 20px 10px 40px;
+}
+
+.site-header .extra {
+	display: none;
+}
+
+.site-header img {
+	width: 100%;
+	max-width: 120px;
+}
+
+.site-header .menu-button {
+	display: none;
+	outline: none;
+}
+
+.main-menu {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.main-menu nav {
+	display: inline-block;
+}
+
+.main-menu ul {
+	list-style: none;
+}
+
+.main-menu li {
+	display: inline-block;
+}
+
+.main-menu a {
+	display: inline-block;
+	margin: 0 20px 0 0;
+	color: #343434;
+	font-size: 0.875em;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	-webkit-transition: border 0.1s linear;
+	transition: border 0.1s linear;
+}
+
+.main-menu a:hover,
+.main-menu a.active {
+	border-bottom-color: #343434;
+}
+
+.site-header .social {
+	float: right;
+	padding: 0 27px 0 10px;
+}
+
+.site-header .social li {
+	float: left;
+}
+
+.site-header .social a {
+	position: relative;
+	display: block;
+	width: 32px;
+	height: 20px;
+	margin: 0;
+	border: 0;
+}
+
+.site-header .social span {
+	display: none;
+}
+
+.site-header .social a:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 32px;
+	padding-top: 2px;
+	font-family: "myfontregular";
+	font-size: 32px;
+	line-height: 0.5em;
+	text-align: center;
+	-webkit-transition: color 0.1s linear;
+	transition: color 0.1s linear;
+}
+
+.site-header .social .twitter:after {
+	content: "T";
+	color: #2bb6d9;
+}
+.site-header .social .facebook:after {
+	content: "F";
+	color: #1052a3;
+}
+
+.site-header .social a:hover:after {
+	color: #343434;
+}
+
+.site-header .external-site {
+	float: right;
+	margin: 0;
+	padding-top: 2px;
+}
+
+.site-header .scrollbar,
+.site-header .track,
+.site-header .handle,
+.site-header .overlay {
+	display: none;
+}
+
+@media only screen and (max-width: 730px) {
+	.site-header .overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		opacity: 0;
+		z-index: 100;
+		background: rgba(255, 255, 255, 0.5);
+	}
+
+	.header-content {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 150;
+	}
+
+	.site-header .content {
+		position: relative;
+		display: block;
+		z-index: 101;
+	}
+
+	.site-header .menu-button {
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: block;
+		padding: 0 20px;
+		line-height: 66px;
+		color: #343434;
+		font-family: "ProximaNovaRegular", Arial, sans-serif;
+		font-weight: 600;
+		font-size: 1.25em;
+		text-transform: uppercase;
+		text-decoration: none;
+		-webkit-transition: color 0.1s linear;
+		transition: color 0.1s linear;
+	}
+
+	/* Scrollbar used when content of panel is too tall for viewport */
+	.site-header .scrollable-content {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.site-header .scrollbar,
+	.site-header .track {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: block;
+		width: 10px;
+	}
+
+	.site-header .handle {
+		position: absolute;
+		top: 0;
+		display: block;
+		height: 50px;
+		width: 100%;
+	}
+
+	.site-header .menu-button:hover {
+		color: #4f4f4f;
+	}
+
+	.site-header .menu-button span {
+		border-bottom: 2px solid #343434;
+		-webkit-transition: color 0.1s linear;
+		transition: color 0.1s linear;
+	}
+
+	.site-header .menu-button:hover span {
+		border-color: #4f4f4f;
+	}
+
+	.main-menu {
+		display: block;
+	}
+
+	.site-header .logo {
+		display: block;
+		width: 100%;
+		padding-left: 20px;
+		-ms-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		background: #fec831;
+		text-align: left;
+	}
+
+	.main-menu {
+		position: fixed;
+		top: 80px;
+		bottom: 0;
+		left: -280px;
+		z-index: 1000;
+		width: 87.5%;
+		max-width: 260px;
+		background: #797979;
+	}
+
+	.main-menu nav,
+	.main-menu li {
+		display: block;
+		width: 100%;
+	}
+
+	.main-menu nav {
+		padding-top: 11px;
+	}
+
+	.main-menu .site-nav a {
+		display: block;
+		margin: 0;
+		padding: 15px 20px;
+		color: #fff;
+		font-size: 1.25em;
+		border: 0;
+		-webkit-transition: color 0.1s linear;
+		transition: color 0.1s linear;
+	}
+
+	.main-menu .site-nav a:hover {
+		color: #ccc;
+	}
+
+	.site-header .social {
+		position: relative;
+		float: none;
+		margin-bottom: 12px;
+		padding: 9px 0 21px 20px;
+	}
+
+	.site-header .social:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	.site-header .social:before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 20px;
+		display: block;
+		width: 10px;
+		height: 2px;
+		background: #fff;
+	}
+
+	.site-header .social h1 {
+		float: left;
+		display: inline-block;
+		padding-left: 0;
+		padding-bottom: 0;
+		padding-right: 20px;
+		margin-top: 7px;
+		font-size: 1.25em;
+		font-weight: 600;
+		line-height: 1.313em;
+	}
+
+	.site-header .social ul {
+		float: left;
+		display: inline-block;
+	}
+
+	.site-header .social li {
+		display: inline;
+		width: auto;
+	}
+
+	.site-header .social a {
+		display: inline-block;
+		width: 57px;
+		height: 32px;
+		font-weight: 400;
+	}
+
+	.site-header .social a:after {
+		width: 57px;
+		padding-top: 6px;
+		font-size: 47px;
+		text-align: center;
+		line-height: 26px;
+	}
+
+	.site-header .external-site {
+		float: none;
+		clear: left;
+		display: block;
+		padding: 15px 20px;
+		font-size: 1.125em;
+		font-family: "ProximaNovaRegular", Arial, sans-serif;
+		font-weight: 600;
+		-webkit-transition: color 0.1s linear;
+		transition: color 0.1s linear;
+	}
+
+	.site-header .external-site:hover {
+		color: #4f4f4f;
+		border-color: transparent;
+	}
+}
+
+/*---------------------------------------------*/
+/* Footer
+/*---------------------------------------------*/
+.site-footer {
+	position: relative;
+	color: #fff;
+	font-family: "ProximaNovaRegular", Arial, sans-serif;
+	font-size: 0.875em;
+	font-weight: 700;
+	text-transform: uppercase;
+	background: #343434;
+}
+
+/* Creates a sticky footer on error pages */
+.site.gallery .site-footer,
+.site.error .site-footer {
+	display: table-row;
+	height: 1px;
+}
+
+.site-footer .content {
+	position: relative;
+	padding: 23px 5.46875%;
+}
+
+.site-footer ul {
+	display: inline-block;
+	padding: 0 150px 0 0;
+	list-style: none;
+}
+
+.site-footer li {
+	display: inline-block;
+	padding: 9px 20px 8px 0;
+}
+
+.site-footer .external {
+	position: absolute;
+	top: 32px;
+	right: 5.46875%;
+	display: inline-block;
+}
+
+.site-footer a {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+}
+
+.site-footer a:hover {
+	border-bottom: 2px solid #fff;
+}
+
+@media only screen and (max-width: 560px) {
+	.site-footer .content {
+		padding-top: 18px;
+		padding-bottom: 18px;
+	}
+
+	.site-footer ul {
+		position: relative;
+		padding-right: 0;
+		margin-bottom: 26px;
+		padding-bottom: 20px;
+	}
+
+	.site-footer ul:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		content: "";
+		display: block;
+		width: 10px;
+		height: 3px;
+		background: #5c5c5c;
+	}
+
+	.site-footer .external {
+		position: static;
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	.site-footer ul {
+		width: 100%;
+	}
+	.site-footer li {
+		display: block;
+	}
+
+	.site-footer .external {
+		position: static;
+	}
+}

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" charset="utf-8">
+    <title>Nation JavaScript Library v2</title>
+    <link rel="stylesheet" href="//getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="//getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="//getbootstrap.com/2.3.2/assets/css/docs.css">
+    <style>
+      body {
+      	padding-top: 0;
+      }
+      
+      a {
+      	color: #0c54d9;
+      	transition: color 0.1s linear;
+      }
+      a:hover {
+      	color: #333;
+      	text-decoration: none;
+      }
+      
+      .jumbotron {
+      	background: transparent linear-gradient(45deg, #0d398b 0%, #0c54d9 100%) repeat scroll 0% 0%;
+      }
+      
+      
+      body > .navbar .brand {
+      	float:left;
+      	text-shadow: rgba(255, 255, 255, 0.0980392) 0px 1px 0px, rgba(255, 255, 255, 0.4) 0px 0px 30px;
+      	color: white;
+      	margin-left:0px;
+      	font-weight:normal;
+      }
+      
+      .bs-docs-sidenav.affix {
+      	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+      	z-index: 10;
+      }
+      
+      .bs-docs-sidenav i{
+      	width: 8px;
+      	height: 8px;
+      	padding: 0px;
+      	margin: 0px;
+      	display: inline-block;
+      	margin-right:0.5em;
+      }
+      
+      .bs-docs-sidenav > li > a {
+      		word-wrap: break-word;
+      }
+      
+      .bs-docs-sidenav > li:first-child > a {
+      	border-top-right-radius: 6px;
+      	border-top-left-radius: 6px;
+      }
+      
+      code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas,Monaco,'Andale Mono',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#f5f2f0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:.7}.token.property,.token.tag,.token.boolean,.token.number{color:#905}.token.selector,.token.attr-name,.token.string{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}
+      div.description {margin: 14px 0; padding-top: 14px; padding-bottom: 14px; }
+      
+      p + section,
+      .description + section {
+      	margin-top: 25px;
+      	padding-top: 25px;
+      	border-top:1px solid #eee;
+      }
+      .tags {}
+      .ctx-type {
+      	display:inline-block;
+      	margin-right:0.5em;
+      	//- float:right; margin-top:8px
+      }
+      
+      .nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+      	background: #0c54d9;
+      }
+      
+      footer iframe{vertical-align:middle;}
+      
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".scrollspy">
+    <header id="overview" class="jumbotron subhead">
+      <div class="container">
+        <h1>Nation JavaScript Library v2</h1>
+        <p class="lead"></p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="span3 bs-docs-sidebar">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
+            <li><a href="index.html">Main</a></li>
+            <li><a href="Accordion.js.html">Accordion.js</a></li>
+            <li><a href="Animation.js.html">Animation.js</a></li>
+            <li><a href="audio/BasicAudioPlayer.js.html">audio/BasicAudioPlayer.js</a></li>
+            <li><a href="Dropdown.js.html">Dropdown.js</a></li>
+            <li><a href="EventDispatcher.js.html">EventDispatcher.js</a></li>
+            <li><a href="InfiniteScroll.js.html">InfiniteScroll.js</a></li>
+            <li class="active"><a href="MediaControls.js.html">MediaControls.js</a></li>
+            <li><a href="ProgressBar.js.html">ProgressBar.js</a></li>
+            <li><a href="Slideshow.js.html">Slideshow.js</a></li>
+            <li><a href="TiledSlideshow.js.html">TiledSlideshow.js</a></li>
+            <li><a href="Utils.js.html">Utils.js</a></li>
+            <li><a href="VerticalScrollbar.js.html">VerticalScrollbar.js</a></li>
+            <li><a href="video/BasicVideoPlayer.js.html">video/BasicVideoPlayer.js</a></li>
+            <li><a href="video/BasicYouTubePlayer.js.html">video/BasicYouTubePlayer.js</a></li>
+            <li><a href="video/StandardVideoPlayer.js.html">video/StandardVideoPlayer.js</a></li>
+            <li><a href="video/StandardYouTubePlayer.js.html">video/StandardYouTubePlayer.js</a></li>
+          </ul>
+          <div class="scrollspy">
+            <ul class="nav nav-list bs-docs-sidenav affix-top">
+              <li><a href="#MediaControls"><i class="alert alert-info"></i><span>MediaControls</span></a>
+              </li>
+              <li><a href="#PLAY_CLICKED"><i class="alert alert-success"></i><span>PLAY_CLICKED</span></a>
+              </li>
+              <li><a href="#PAUSE_CLICKED"><i class="alert alert-success"></i><span>PAUSE_CLICKED</span></a>
+              </li>
+              <li><a href="#MUTE_CLICKED"><i class="alert alert-success"></i><span>MUTE_CLICKED</span></a>
+              </li>
+              <li><a href="#UNMUTE_CLICKED"><i class="alert alert-success"></i><span>UNMUTE_CLICKED</span></a>
+              </li>
+              <li><a href="#PROGRESS_CLICKED"><i class="alert alert-success"></i><span>PROGRESS_CLICKED</span></a>
+              </li>
+              <li><a href="#ENTER_FULL_SCREEN_CLICKED"><i class="alert alert-success"></i><span>ENTER_FULL_SCREEN_CLICKED</span></a>
+              </li>
+              <li><a href="#EXIT_FULL_SCREEN_CLICKED"><i class="alert alert-success"></i><span>EXIT_FULL_SCREEN_CLICKED</span></a>
+              </li>
+              <li><a href="#HANDLE_MOUSE_DOWN"><i class="alert alert-success"></i><span>HANDLE_MOUSE_DOWN</span></a>
+              </li>
+              <li><a href="#HANDLE_DRAGGED"><i class="alert alert-success"></i><span>HANDLE_DRAGGED</span></a>
+              </li>
+              <li><a href="#HANDLE_RELEASED"><i class="alert alert-success"></i><span>HANDLE_RELEASED</span></a>
+              </li>
+              <li><a href="#OVERLAY_HIDDEN"><i class="alert alert-success"></i><span>OVERLAY_HIDDEN</span></a>
+              </li>
+              <li><a href="#setProgress"><i class="alert alert-info"></i><span>setProgress</span></a>
+              </li>
+              <li><a href="#setDisplayedDuration"><i class="alert alert-info"></i><span>setDisplayedDuration</span></a>
+              </li>
+              <li><a href="#setDisplayedCurrentTime"><i class="alert alert-info"></i><span>setDisplayedCurrentTime</span></a>
+              </li>
+              <li><a href="#setLoaded"><i class="alert alert-info"></i><span>setLoaded</span></a>
+              </li>
+              <li><a href="#getRequestedPercentage"><i class="alert alert-info"></i><span>getRequestedPercentage</span></a>
+              </li>
+              <li><a href="#getControlsShowing"><i class="alert alert-info"></i><span>getControlsShowing</span></a>
+              </li>
+              <li><a href="#showPlayButton"><i class="alert alert-info"></i><span>showPlayButton</span></a>
+              </li>
+              <li><a href="#showPauseButton"><i class="alert alert-info"></i><span>showPauseButton</span></a>
+              </li>
+              <li><a href="#show"><i class="alert alert-info"></i><span>show</span></a>
+              </li>
+              <li><a href="#hide"><i class="alert alert-info"></i><span>hide</span></a>
+              </li>
+              <li><a href="#startAutoHiding"><i class="alert alert-info"></i><span>startAutoHiding</span></a>
+              </li>
+              <li><a href="#showLargePlayButton"><i class="alert alert-info"></i><span>showLargePlayButton</span></a>
+              </li>
+              <li><a href="#hideLargePlayButton"><i class="alert alert-info"></i><span>hideLargePlayButton</span></a>
+              </li>
+              <li><a href="#showMuteButton"><i class="alert alert-info"></i><span>showMuteButton</span></a>
+              </li>
+              <li><a href="#showUnMuteButton"><i class="alert alert-info"></i><span>showUnMuteButton</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="span9">
+          <section id="MediaControls">
+            <h1>MediaControls</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>MediaControls()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>selector</td>
+                <td>domelement_or_querystring_or_jqueryobject</td>
+                <td><p>The element that wraps the controls HTML</p></td>
+              </tr>
+              <tr>
+                <td>options</td>
+                <td>object</td>
+                <td><p>Object containing the settings for the controls<br /> <b>fade</b> <i>boolean:false</i> If set to true, the controls will show and hide via a simple fade<br /><b>slide</b> <i>boolean:false</i> If set to true, the controls will show and hide by sliding into view from the bottom. This requires selector to have a style of overflow:hidden<br /><b>delay</b> <i>number: 1000</i> The length of idle mouse time to wait before hiding the controls<br /><b>duration</b> <i>number: 300</i> The length of time a fade of hide animation takes to play<br /><b>easing</b> <i>string: &quot;linear&quot;</i> The easing function to use during a show or hide of the controls<br /><b>mobileMode</b> <i>boolean: false</i> If true, controls functionality will not be enabled, except for the large play button that covers a video. When clicked, this button will be hidden so that default controls can be accessed<br /><b>handlePositioning</b> <i>string: &quot;outside&quot;</i> This is an option for the progress bar. &quot;inside&quot; keeps the handle within it&#39;s progress bar, whereas &quot;outside&quot; considers the handle to be positioned about it&#39;s center, and will allow it to poke out the left and right sides of the progress bar</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><h3>Dependencies:</h3>
+<p><a href="Utils.js.html">NATION.Utils</a><br /><a href="EventDispatcher.js.html">NATION.EventDispatcher</a><br />Either <a href="Animation.js.html">NATION.Animation</a> or jQuery<br />Optional <a href="ProgressBar.js.html">NATION.ProgressBar</a> if a progress bar is required</p><h3>About:</h3>
+<p>Controls for use with audio and video players. Has support for play/pause button, mute button, progress bar, full screen button, current time display, duration display, and a play/pause area over a video</p><p>Each button is optional. The class will look for elements within selector and enable them if it finds them. Below are the classnames to use for each feature:</p><ul>
+<li>.js-play-button or .play-button for the play/pause toggle</li>
+<li>.js-progress-bar or .progress-bar for the draggable progress bar</li>
+<li>.js-video-overlay or .video-overlay for the large transparent play/pause button that sits over the video</li>
+<li>.js-mute-button or .mute-button for the mute/unmute toggle</li>
+<li>.js-full-screen-button or .full-screen-button for the enter/exit full screen toggle</li>
+<li>.js-current-time or .current-time for the element that will contain the current video play time</li>
+<li>.js-duration or .duration for the element that will contain the full length of the video</li>
+</ul>
+ </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <h4>Example</h4>
+          <p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/NationStudio/fpv3feex/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+          </p>
+          <section id="PLAY_CLICKED">
+            <h1>PLAY_CLICKED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.PLAY_CLICKED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the play button has been clicked</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="PAUSE_CLICKED">
+            <h1>PAUSE_CLICKED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.PAUSE_CLICKED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the pause button has been clicked</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="MUTE_CLICKED">
+            <h1>MUTE_CLICKED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.MUTE_CLICKED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the mute button has been clicked</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="UNMUTE_CLICKED">
+            <h1>UNMUTE_CLICKED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.UNMUTE_CLICKED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the unmute button has been clicked</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="PROGRESS_CLICKED">
+            <h1>PROGRESS_CLICKED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.PROGRESS_CLICKED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the progress bar has been clicked</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="ENTER_FULL_SCREEN_CLICKED">
+            <h1>ENTER_FULL_SCREEN_CLICKED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.ENTER_FULL_SCREEN_CLICKED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the &#39;enter full screen&#39; button has been clicked</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="EXIT_FULL_SCREEN_CLICKED">
+            <h1>EXIT_FULL_SCREEN_CLICKED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.EXIT_FULL_SCREEN_CLICKED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the &#39;exit full screen&#39; button has been clicked</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="HANDLE_MOUSE_DOWN">
+            <h1>HANDLE_MOUSE_DOWN</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.HANDLE_MOUSE_DOWN</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the user has pressed down on the handle and is about to start dragging</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="HANDLE_DRAGGED">
+            <h1>HANDLE_DRAGGED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.HANDLE_DRAGGED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that is fired each time the user moves their mouse horizontally while clicked down on the handle</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="HANDLE_RELEASED">
+            <h1>HANDLE_RELEASED</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.HANDLE_RELEASED</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the handle has been released by the user</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="OVERLAY_HIDDEN">
+            <h1>OVERLAY_HIDDEN</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>MediaControls.prototype.OVERLAY_HIDDEN</span>
+            </p>
+          </section>
+          <div class="description"><p>Event that fires when the large play button over the video has been hidden (mobileMode only)</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="setProgress">
+            <h1>setProgress</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.setProgress()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>percentage</td>
+                <td>number</td>
+                <td><p>Percentage to set progress bar to, between 0 and 1</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Set play progress percentage</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="setDisplayedDuration">
+            <h1>setDisplayedDuration</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.setDisplayedDuration()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>timeString</td>
+                <td>string</td>
+                <td><p>This can be any string at all, which will be shown as the media duration</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Set the string shown in the .js-duration/.duration element (if one exists)</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="setDisplayedCurrentTime">
+            <h1>setDisplayedCurrentTime</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.setDisplayedCurrentTime()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>timeString</td>
+                <td>string</td>
+                <td><p>This can be any string at all, which will be shown as the media&#39;s current timestamp</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Set the string shown in the .js-current-time/.current-time element (if one exists)</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="setLoaded">
+            <h1>setLoaded</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.setLoaded()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>percentage</td>
+                <td>number</td>
+                <td><p>Percentage between 0 and 1</p></td>
+              </tr>
+              <tr>
+                <td>adjustHitArea</td>
+                <td>boolean</td>
+                <td><p>Match clickable hitarea to loaded bar</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Set the percentage loaded</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="getRequestedPercentage">
+            <h1>getRequestedPercentage</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.getRequestedPercentage()</span> -><span>number</span>
+            </p>
+          </section>
+          <div class="description"><p>Returns the percentage the user wants to scan to, between 0 and 1</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="getControlsShowing">
+            <h1>getControlsShowing</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.getControlsShowing()</span> -><span>boolean</span>
+            </p>
+          </section>
+          <div class="description"><p>Returns whether controls are currently visible or not</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="showPlayButton">
+            <h1>showPlayButton</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.showPlayButton()</span>
+            </p>
+          </section>
+          <div class="description"><p>Switches play button to &#39;not currently playing&#39; state</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="showPauseButton">
+            <h1>showPauseButton</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.showPauseButton()</span>
+            </p>
+          </section>
+          <div class="description"><p>Switches play button to &#39;currently playing&#39; state</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="show">
+            <h1>show</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.show()</span>
+            </p>
+          </section>
+          <div class="description"><p>Show the controls</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="hide">
+            <h1>hide</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.hide()</span>
+            </p>
+          </section>
+          <div class="description"><p>Hide the controls</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="startAutoHiding">
+            <h1>startAutoHiding</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.startAutoHiding()</span>
+            </p>
+          </section>
+          <div class="description"><p>Start the automatic hiding of controls after a period of idle mouse movement</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="showLargePlayButton">
+            <h1>showLargePlayButton</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.showLargePlayButton()</span>
+            </p>
+          </section>
+          <div class="description"><p>Shows large play button that sits over the video</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="hideLargePlayButton">
+            <h1>hideLargePlayButton</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.hideLargePlayButton()</span>
+            </p>
+          </section>
+          <div class="description"><p>Hides the large play button. This means users can click directly on the YouTube video</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="showMuteButton">
+            <h1>showMuteButton</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.showMuteButton()</span>
+            </p>
+          </section>
+          <div class="description"><p>Show the mute button (ie. the sound is currently on)</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+          <section id="showUnMuteButton">
+            <h1>showUnMuteButton</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>MediaControls.prototype.showUnMuteButton()</span>
+            </p>
+          </section>
+          <div class="description"><p>Show the unmute button (ie. the sound is currently off)</p> </div>
+          <!--pre-->
+          <!--	code.language-javascript-->
+          <!--		= symbol.code-->
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="https://leaverou.github.com/prefixfree/prefixfree.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-transition.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-dropdown.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js"></script>
+    <script src="https://getbootstrap.com/2.3.2/assets/js/bootstrap-affix.js"></script>
+    <script>
+      /**
+       * Prism: Lightweight, robust, elegant syntax highlighting
+       * MIT license http://www.opensource.org/licenses/mit-license.php/
+       * @author Lea Verou http://lea.verou.me
+       */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data));l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r){return n.stringify(t.tokenize(e,r))},tokenize:function(e,n){var r=t.Token,i=[e],s=n.rest;if(s){for(var o in s)n[o]=s[o];delete n.rest}e:for(var o in n){if(!n.hasOwnProperty(o)||!n[o])continue;var u=n[o],a=u.inside,f=!!u.lookbehind||0;u=u.pattern||u;for(var l=0;l<i.length;l++){var c=i[l];if(i.length>e.length)break e;if(c instanceof r)continue;u.lastIndex=0;var h=u.exec(c);if(h){f&&(f=h[1].length);var p=h.index-1+f,h=h[0].slice(f),d=h.length,v=p+d,m=c.slice(0,p+1),g=c.slice(v+1),y=[l,1];m&&y.push(m);var b=new r(o,a?t.tokenize(h,a):h);y.push(b);g&&y.push(g);Array.prototype.splice.apply(i,y)}}}return i},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]"){for(var r=0;r<e.length;r++)e[r]=n.stringify(e[r]);return e.join("")}var i={type:e.type,content:n.stringify(e.content),tag:"span",classes:["token",e.type],attributes:{}};i.type=="comment"&&(i.attributes.spellcheck="true");t.hooks.run("wrap",i);var s="";for(var o in i.attributes)s+=o+'="'+(i.attributes[o]||"")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'" '+s+">"+i.content+"</"+i.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+      Prism.languages.markup={comment:/&lt;!--[\w\W]*?--(&gt;|&gt;)/g,prolog:/&lt;\?.+?\?&gt;/,doctype:/&lt;!DOCTYPE.+?&gt;/,cdata:/&lt;!\[CDATA\[[\w\W]+?]]&gt;/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?&gt;/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|&gt;|"/g}},punctuation:/\/?&gt;/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
+      Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:/@[\w-]+?(\s+[^;{]+)?(?=\s*{|\s*;)/gi,url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,property:/(\b|\B)[a-z-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
+      Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,number:/\b-?(0x)?\d*\.?[\da-f]+\b/g,operator:/[-+]{1,2}|!|=?&lt;|=?&gt;|={1,2}|(&amp;){1,2}|\|?\||\?|\*|\//g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};;
+      Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|catch|finally|null|break|continue)\b/g,number:/\b(-?(0x)?\d*\.?[\da-f]+|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});;
+      
+    </script>
+    <!-- App js-->
+    <script>
+      $(function(){
+      	var $window = $(window);
+      	$('.scrollspy .nav').affix({
+      		offset: {
+      			top: function () { return $window.width() <= 980 ? 480 : 400 }
+      		, bottom: 50
+      		}
+      	});
+      })
+    </script>
+  </body>
+</html>

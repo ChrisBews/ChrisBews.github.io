@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+		<div class="page-view" data-view="">
+			<section class="site-section blog blog-page js-page-section">
+				<div class="section-content">
+					<h2 class="section-title">Blog</h2>
+					<article class="blog-post">
+						<h2 class="blog-title">{{ page.title }}</h2>
+						<dl class="blog-details">
+							<dt>Date posted</dt>
+							<dd>
+								{% assign d = page.date | date: "%-d"  %}
+								{% case d %}
+								  {% when '1' or '21' or '31' %}{{ d }}st
+								  {% when '2' or '22' %}{{ d }}nd
+								  {% when '3' or '23' %}{{ d }}rd
+								  {% else %}{{ d }}th
+								  {% endcase %}
+								  {{ page.date | date: "%B" }} 
+								{{ page.date | date: "%Y" }}</dd>
+						</dl>
+						<div class="blog-content">
+							{{ content }}
+						</div>
+						<nav class="blog-nav">
+							<ol class="blog-nav-options">
+								{% if page.previous.url %}
+									<li class="older"><a href="{{page.previous.url}}" class="older-button">Older</a></li>
+								{% endif %}
+								{% if page.next.url %}
+									<li class="newer"><a href="{{page.next.url}}" class="newer-button">Newer</a></li>
+								{% endif %}
+							</ol>
+						</nav>
+					</article>
+				</div>
+			</section>
+		</div>

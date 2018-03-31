@@ -1,0 +1,42 @@
+/*---------------------------------------------*/
+/* Login form
+/*---------------------------------------------*/
+form#user-login {
+	width: 50%;
+	margin: auto;
+	padding: 60px 0 60px 0;
+	color: black;
+}
+form#user-login input[type="text"],
+form#user-login input[type="password"] {
+	padding: 10px 17px 9px;
+	font-size: 1em;
+	color: #343434;
+	border: 1px solid #343434;
+	font-family: ProximaNovaRegular,Arial,sans-serif;
+	font-style: normal;
+	border-radius: 3px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+form#user-login input[type=submit] {
+	min-width: 185px;
+	margin-top: 20px;
+	cursor: pointer;
+	outline: 0;
+	display: inline-block;
+	margin: 20px 0 0 0;
+	padding: 20px 18px;
+	color: #fff;
+	font-size: 1.25em;
+	font-family: ProximaNovaRegular,Arial,sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #343434;
+	border: transparent;
+	border-radius: 3px;
+	webkit-transition: background .1s linear;
+	transition: background .1s linear;
+}

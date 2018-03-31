@@ -1,1 +1,172 @@
-<h1>Snowbeat</h1>
+---
+layout: default
+---
+
+		<div class="page-view" data-view="HomeView">
+			<section class="site-section project-list js-page-section">
+				<div class="section-content">
+					<h2 class="section-title">Projects</h2>
+					<h3 class="section-subtitle">A selection of my latest work</h3>
+					<article class="project">
+						<a href="http://www.wearenation.co.uk" target="_blank">
+							<img src="media/projects/nation/thumb.gif" alt="Nation" />
+							<div class="overlay">
+								<h2 class="project-title">Nation</h2>
+							</div>
+						</a>
+					</article>
+					<article class="project">
+						<a href="media/projects/nation-library/index.html" target="_blank">
+							<img src="media/projects/nation-library/thumb.jpg" alt="Syrup Sounds" />
+							<div class="overlay">
+								<h2 class="project-title">Nation JavaScript Library</h2>
+							</div>
+						</a>
+					</article>
+					<article class="project">
+						<a href="http://www.syrupsounds.com" target="_blank">
+							<img src="media/projects/syrup-sounds/thumb.gif" alt="Syrup Sounds" />
+							<div class="overlay">
+								<h2 class="project-title">Syrup Sounds</h2>
+							</div>
+						</a>
+					</article>
+					<article class="project">
+						<a href="http://www.peroniitaly.com" target="_blank">
+							<img src="media/projects/peroni/thumb.jpg" alt="Peroni Italy" />
+							<div class="overlay">
+								<h2 class="project-title">Peroni Italy</h2>
+							</div>
+						</a>
+					</article>
+
+					<article class="project">
+						<a href="https://www.youtube.com/watch?v=WwrlVz7Hhq8" target="_blank">
+							<img src="media/projects/pokerstars/thumb.jpg" alt="Pokerstars" />
+							<div class="overlay">
+								<h2 class="project-title">Pokerstars</h2>
+							</div>
+						</a>
+					</article>
+					
+					<article class="project">
+						<a href="media/projects/bisdt/index.html" target="_blank">
+							<img src="media/projects/bisdt/thumb.jpg" alt="Nation" />
+							<div class="overlay">
+								<h2 class="project-title">Barbour International <br />Six Days Trial</h2>
+							</div>
+						</a>
+					</article>
+				</div>
+			</section>
+
+			<section class="site-section about dark js-page-section">
+				<div class="section-content">
+					<h2 class="section-title">Who?</h2>
+					<h3 class="section-subtitle">I'm Christopher Bews, a front-end developer with 10 years experience.</h3>
+					<h4 class="extra">My Main Tools</h4>
+					<div class="skill-row">
+						<article class="skill">
+							<h2 class="skill-title">JavaScript</h2>
+							<p>I usually code in pure JavaScript. I use third party frameworks when the project will benefit from one. I have built sites with ES2015 via Babel too.</p>
+						</article>
+						<article class="skill">
+							<h2 class="skill-title">CSS</h2>
+							<p>I usually code in pure CSS, but also have built sites with SASS. I like to keep things minimal, fast, and readable. I have lived through the IE6 days and survived to tell the tale.</p>
+						</article>
+					</div>
+					<div class="skill-row">
+						<article class="skill">
+							<h2 class="skill-title">HTML 5</h2>
+							<p>I code semantically correct HTML, and build accessbile sites as required. I am excited by the 2D canvas API, WebGL, the Audio API... in fact most of the current and new APIs.</p>
+						</article>
+						<article class="skill">
+							<h2 class="skill-title">Tooling</h2>
+							<p>I use Gulp to compile CSS and JavaScript, Sublime Text to edit code, Git for version control (after years of prior SVN use), and test in every relevant browser (currently IE9+).</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="site-section blog preview js-blog-section">
+				<div class="section-content">
+					<h2 class="section-title">Blog</h2>
+					{% for post in site.posts limit:1 %}
+						<article class="blog-post">
+							<h2 class="blog-title">{{ post.title }}</h2>
+							<dl class="blog-details">
+								<dt>Date posted</dt>
+								<dd>
+									{% assign d = post.date | date: "%-d"  %}
+									{% case d %}
+									  {% when '1' or '21' or '31' %}{{ d }}st
+									  {% when '2' or '22' %}{{ d }}nd
+									  {% when '3' or '23' %}{{ d }}rd
+									  {% else %}{{ d }}th
+									  {% endcase %}
+									  {{ post.date | date: "%B" }} 
+									{{ post.date | date: "%Y" }}
+								</dd>
+							</dl>
+							<div class="blog-content">
+								{{ post.excerpt }}
+								<div class="remaining-content js-expandable-content">
+									<div>
+										{% assign contentArray = post.content | split: site.excerpt_separator %}
+										{{ contentArray.last }}
+									</div>
+								</div>
+							</div>
+					{% endfor %}
+							<nav class="blog-nav">
+								<ol class="blog-nav-options">
+									{% for post in site.posts offset: 1 limit:1 %}
+										<li class="older js-show-on-expand"><a href="{{post.url}}" class="older-button">Older</a></li>
+									{% endfor %}
+									{% for post in site.posts limit:1 %}
+										<li class="read-more js-expand-trigger js-hide-on-expand"><a href="#" class="read-more-button" data-url="{{ post.url }}">Read more</a></li>
+									{% endfor %}
+								</ol>
+							</nav>
+						</article>
+					
+					<!--<a href="#" class="read-more-button">Read more</a> -->
+				</div>
+			</section>
+
+			<section class="site-section project-list dark js-page-section">
+				<div class="section-content">
+					<h2 class="section-title">Labs</h2>
+					<h3 class="section-subtitle">A collection of technologies and ideas that I’m currently researching.</h3>
+					<article class="project">
+						<a href="media/labs/collisions/index.html" target="_blank">
+							<img src="media/labs/collisions/thumb.gif" alt="Collisions" />
+							<div class="overlay">
+								<h2 class="project-title">Collisions</h2>
+							</div>
+						</a>
+					</article>
+				</div>
+			</section>
+		</div>
+
+<!--<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
+-->
