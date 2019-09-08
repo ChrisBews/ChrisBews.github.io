@@ -6,7 +6,15 @@ layout: default
 			<section class="site-section project-list js-page-section">
 				<div class="section-content">
 					<h2 class="section-title">Projects</h2>
-					<h3 class="section-subtitle">A selection of my latest work</h3>
+					<h3 class="section-subtitle">Some of my latest work</h3>
+					<article class="project">
+						<a href="https://roli.com/start" target="_blank">
+							<img src="media/projects/roli-connect/thumb.jpg" alt="ROLI Connect" />
+							<div class="overlay">
+								<h2 class="project-title">ROLI Connect</h2>
+							</div>
+						</a>
+					</article>
 					<article class="project">
 						<a href="https://itunes.apple.com/app/roli-play/id1260988305" target="_blank">
 							<img src="media/projects/roli-play/thumb.jpg" alt="ROLI PLAY" />
@@ -72,7 +80,7 @@ layout: default
 							</div>
 						</a>
 					</article>
-					
+
 					<!--<article class="project">
 						<a href="media/projects/bisdt/index.html" target="_blank">
 							<img src="media/projects/bisdt/thumb.jpg" alt="Nation" />
@@ -128,7 +136,7 @@ layout: default
 									  {% when '3' or '23' %}{{ d }}rd
 									  {% else %}{{ d }}th
 									  {% endcase %}
-									  {{ post.date | date: "%B" }} 
+									  {{ post.date | date: "%B" }}
 									{{ post.date | date: "%Y" }}
 								</dd>
 							</dl>
@@ -153,15 +161,15 @@ layout: default
 								</ol>
 							</nav>
 						</article>
-					
+
 					<!--<a href="#" class="read-more-button">Read more</a> -->
 				</div>
 			</section>
 
 			<section class="site-section project-list dark js-page-section">
 				<div class="section-content">
-					<h2 class="section-title">Labs</h2>
-					<h3 class="section-subtitle">A collection of technologies and ideas that I’m currently researching.</h3>
+					<h2 class="section-title">Code</h2>
+					<h3 class="section-subtitle">Small projects and tests.</h3>
 					<article class="project">
 						<a href="media/labs/collisions/index.html" target="_blank">
 							<img src="media/labs/collisions/thumb.gif" alt="Collisions" />
