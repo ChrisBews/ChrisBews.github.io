@@ -133,12 +133,12 @@
 				transform: "scale(0, 0)"
 			});
 			NATION.Utils.setStyle(this.__menuButton.querySelector(".center"), {
-				background: "#1299DC", 
+				background: "#1299DC",
 				transform: "rotate(45deg)"
 			});
 			this.__menuButtonLabel.innerHTML = this.menuButtonCloseCopy;
 		}
-		
+
 	}
 	//------------------------------------------------
 	// End of the animation showing the close icon in
@@ -361,7 +361,7 @@
 			// Create new breadcrumbs
 			var anchor = document.createElement("a");
 			anchor.setAttribute("href", "#");
-			anchor.setAttribute("data-view", "/" + this.sectionArray[0].toLowerCase());
+			anchor.setAttribute("data-view", "/" + this.sectionArray[0].toLowerCase() + "/");
 			// Figure out the copy to show by using the first part if tge section array
 			var displayCopy = (this.sectionArray.length > 1) ? this.backCopy : this.sectionArray[0].toLowerCase();
 			// Create a simple text node with the new copy
