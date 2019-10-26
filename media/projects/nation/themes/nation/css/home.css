@@ -1,0 +1,666 @@
+/*---------------------------------------------*/
+/* Intro
+/*---------------------------------------------*/
+.homepage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	overflow: hidden;
+}
+
+.homepage:after {
+	position: absolute;
+	top: 100%;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 259px;
+	z-index: -2;
+}
+
+/* These must match the margin-bottom on .site-content! */
+@media (max-width: 1275px) {
+	.homepage:after {
+		height: 299px;
+	}
+}
+
+@media (max-width: 850px) {
+	.homepage:after {
+		height: 339px;
+	}
+}
+
+@media (max-width: 500px) {
+	.homepage:after {
+		height: 0;
+	}
+}
+
+.homepage .overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	z-index: 10;
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	
+}
+
+.homepage .overlay-content {
+	position: relative;
+	left: -50%;
+	padding: 0 0 10px 0;
+	overflow: hidden;
+}
+
+.homepage .title {
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	opacity: 0;
+}
+
+.homepage .title img,
+.homepage .title svg {
+	width: 100%;
+	height: 118px;
+}
+
+.homepage .title .bubble {
+	position: absolute;
+	width: 34px;
+	height: 34px;
+}
+
+.homepage .intro-nation {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+@media (max-width: 800px) and (min-height: 450px) {
+	.bubble {
+		transform: scale(2);
+	}
+	.homepage .intro-we-are {
+		position: static;
+		-ms-transform: scale(2) translateX(25%) translateY(15%);
+		-webkit-transform: scale(2) translateX(25%) translateY(15%);
+		transform: scale(2) translateX(25%) translateY(15%);
+	}
+	.homepage .intro-nation {
+		position: static;
+		-ms-transform: scale(2) translateX(-26.5%) translateY(65%);
+		-webkit-transform: scale(2) translateX(-26.5%) translateY(65%);
+		transform: scale(2) translateX(-26.5%) translateY(65%);
+	}
+}
+
+.homepage .subtitle {
+	padding: 20px 40px 0 40px;
+	color: #7ff6d1;
+	font-family: "apercu_mono";
+	font-size: 1.875rem;
+	text-align: center;
+	font-weight: 400;
+	opacity: 0;
+}
+
+.homepage .subnav {
+	padding: 100px 0 0 0;
+	list-style: none;
+	font-size: 0;
+	text-align: center;
+	opacity: 0;
+	
+}
+
+.homepage .subnav li {
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	font-size: 2.188rem;
+	letter-spacing: 2px;
+	word-spacing: -3px;
+	font-family: "apercu_regular";
+	opacity: 1;
+}
+
+.homepage .subnav li:first-child {
+	margin-left: 0;
+	padding-left: 0;
+}
+.homepage .subnav li:first-child:before {
+	display: none;
+}
+
+.homepage .subnav a {
+	position: relative;
+	display: inline-block;
+	margin: 0 28px;
+	color: #fff;
+	text-decoration: none;
+	outline: 0;
+	-webkit-transition: color 0.2s linear;
+	transition: color 0.2s linear;
+}
+
+.homepage .subnav .divider {
+	display: inline-block;
+	padding: 0 6px 0 0;
+	font-size: 1.938rem;
+}
+
+.homepage .subnav a:hover {
+	color: #7ff6d1;
+}
+
+.homepage .subnav .copy {
+	display: inline-block;
+	opacity: 0;
+}
+
+.homepage .subnav li:nth-child(1) .copy {
+	opacity: 1;
+}
+
+.homepage .subnav .underline {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 3px;
+	margin-top: 4px;
+	background: #fff;
+	-webkit-transition: background 0.2s linear;
+	transition: background 0.2s linear;
+	opacity: 0;
+	border-radius: 3px;
+}
+
+.homepage .subnav a:hover .underline {
+	background: #7ff6d1;
+}
+
+.homepage .intro-videos {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.homepage .intro-image-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #094bc5;
+}
+
+.homepage .intro-bg-image {
+	display: none;
+}
+
+.touch .homepage .intro-bg-image,
+.touch .homepage img {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	display: inline;
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.homepage .js-video-player {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #000;
+}
+
+.homepage .js-flag-video,
+.homepage .js-loop-video {
+	opacity: 0;
+}
+
+.homepage .js-loop-video video {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	right: auto;
+	bottom: auto;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #333;
+}
+
+.homepage .js-reel-video {
+	background: #333;
+}
+
+.homepage .video-content {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+}
+
+.homepage .js-reel-video .js-player {
+	position: absolute;
+}
+
+.homepage .js-reel-video video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: #333;
+}
+
+/* Reel controls are positioned with JS to maintain aspect ratio over the centered video */
+.homepage .js-reel-video .js-controls-container {
+	right: auto;
+	bottom: auto;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.homepage .js-reel-video .js-progress-bar .js-progress {
+	background: #7ff6d1;
+}
+
+.homepage .js-video-overlay .icon {
+	display: none;
+}
+
+/* On touch devices, default controls are used, so the player must be fully visible */
+.touch .homepage .js-reel-video video {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: none;
+	background: #094bc5;
+	-webkit-transition: background 0.2s linear;
+	transition: background 0.2s linear;
+}
+
+.touch .homepage .js-reel-video.active video {
+	background: #333;
+}
+
+.homepage .reel-player {
+	z-index: 200;
+	display: none;
+}
+
+.touch .js-reel-video .js-controls-container {
+	display: block;
+}
+.touch .js-reel-video .js-video-overlay {
+	display: none;
+}
+
+.touch .js-reel-video .js-close-button {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+
+.touch .homepage .js-reel-video .js-controls-container {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-ms-transform: none;
+	-webkit-transform: none;
+	transform: none;
+}
+.touch .homepage .js-close-button .icon-graphic {
+	stroke: #fff;
+}
+.touch .homepage .video-content {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.homepage .js-video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	cursor: default;
+	background-color: rgba(10, 88, 231, 0.85);
+}
+.homepage .reel-player .js-video-overlay {
+	background: transparent;
+}
+
+/* The following styles override the default video player styles found in global.css */
+.homepage .js-video-player .button {
+	background: #0c54d9;
+}
+
+/* Switch the left border out for :before content. This is to achieve
+   a border that isn't 100% height */
+.homepage .js-video-player .button + .button {
+	border-left: 0;
+	padding-left: 2px;
+}
+
+.homepage .js-video-player .button + .button:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 10px;
+	bottom: 10px;
+	width: 2px;
+	background: #fff;
+}
+
+.homepage .reel-player .controls-wrapper {
+	position: absolute;
+	left: 30px;
+	bottom: 30px;
+	right: 30px;
+	height: 45px;
+	overflow: hidden;
+}
+
+.homepage .js-video-player .js-controls {
+	left: 0;
+	bottom: auto;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	visibility: visible;
+}
+
+.homepage .js-video-player .icon-graphic {
+	stroke: #fff;
+}
+.homepage .js-video-player a:hover .icon-graphic {
+	stroke: #7ff6d1;
+}
+.homepage .js-video-player .icon-fill {
+	fill: #fff;
+}
+.homepage .js-video-player a:hover .icon-fill {
+	fill: #7ff6d1;
+}
+
+.homepage video {
+	width: 100%;
+	height: 100%;
+}
+
+.homepage .js-close-button {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	z-index: 70;
+	color: #fff;
+	-webkit-transition: transform 0.3s cubic-bezier(0, 0, 0.1, 1.6);
+	transition: transform 0.3s cubic-bezier(0, 0, 0.1, 1.6);
+}
+
+.homepage .js-close-button:hover {
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+
+}
+
+.homepage .js-close-button svg {
+	width: 45px;
+	height: 45px;
+	vertical-align: top;
+}
+
+.homepage .js-close-button .icon-graphic {
+	stroke: #0c54d9;
+	-webkit-transition: stroke 0.2s linear;
+	transition: stroke 0.2s linear;
+}
+.homepage .js-close-button:hover .icon-graphic {
+	stroke: #7ff6d1;
+}
+
+@media (max-width: 1060px),
+(max-height: 550px) {
+	.homepage .title {
+		width: 700px;
+	}
+
+	.homepage .subtitle {
+		font-size: 1.75rem;
+	}
+
+	.homepage .subnav {
+		padding-top: 50px;
+	}
+
+	.homepage .subnav a {
+		font-size: 1.75rem;
+	}
+
+	.homepage .title img,
+	.homepage .title svg {
+		width: 100%;
+		height: 83px;
+	}
+}
+
+@media (max-width: 1060px) and (min-height: 551px) {
+	.homepage .subnav {
+		padding-top: 90px;
+	}
+}
+
+/* Main title goes onto 2 lines */
+@media (max-width: 800px),
+ (max-height: 450px) {
+	.homepage .title {
+		width: 500px;
+	}
+
+	.homepage .title img,
+	.homepage .title svg {
+		width: 100%;
+		height: 59px;
+	}
+
+	.homepage .subtitle {
+		font-size: 1.875rem;
+	}
+
+	.homepage .subnav {
+		padding-top: 80px;
+	}
+
+	.homepage .subnav a {
+		font-size: 1.563rem;
+	}
+}
+
+@media (max-width: 800px) and (min-width: 550px) {
+	.homepage .subtitle {
+		padding-top: 138px;
+	}
+
+	.homepage .subnav .divider {
+		font-size: 1.638rem;
+	}
+}
+
+@media (max-width: 800px) {
+	.homepage .subtitle {
+		padding-top: 138px;
+	}
+}
+
+@media (max-height: 450px) {
+	.homepage .subtitle {
+		font-size: 1.5rem;
+		padding-top: 20px;
+	}
+
+	.homepage .subnav {
+		padding-top: 20px;
+	}
+}
+
+@media (max-width: 550px),
+ (max-height: 350px) {
+	.homepage .title {
+		width: 400px;
+	}
+
+	.homepage .title img,
+	.homepage .title svg {
+		width: 100%;
+		height: 47px;
+	}
+
+	.homepage .subnav .divider {
+		font-size: 1.25rem;
+	}
+	.homepage .subnav {
+		font-size: 1.563rem;
+	}
+}
+@media (max-width: 550px) and (min-height: 550px) {
+	.homepage .subtitle {
+		padding-top: 120px;
+	}
+
+	.homepage .subnav {
+		padding-top: 70px;
+	}
+}
+
+@media (max-width: 500px) {
+	.touch .homepage .intro-bg-image,
+	.touch .homepage img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: inline;
+		width: auto;
+		min-width: 100%;
+		min-height: 100%;
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
+	}
+
+	.homepage .subnav a {
+		margin: 0 5px;
+	}
+
+	.homepage .subnav .divider {
+		padding-left: 10px;
+	}
+}
+
+@media (max-width: 450px),
+ (max-height: 300px) {
+	.homepage .title {
+		width: 300px;
+	}
+
+	.homepage .title img,
+	.homepage .title svg {
+		width: 100%;
+		height: 35px;
+	}
+
+	.homepage .subtitle {
+		font-size: 1.313rem;
+	}
+
+	.homepage .subnav {
+		padding-top: 10px;
+	}
+
+	.homepage .subnav a {
+		font-size: 1.25rem;
+	}
+}
+@media (max-width: 450px) and (min-height: 550px) {
+	.homepage .subtitle {
+		padding-top: 92px;
+		font-size: 1.5rem;
+	}
+
+	.homepage .subnav {
+		padding-top: 60px;
+	}
+	.homepage .subnav a {
+		font-size: 1.375rem;
+	}
+}
+
+@media (max-width: 400px) and (min-height: 450px) {
+	.homepage .subtitle {
+		padding-top: 68px;
+	}
+
+	.homepage .subnav {
+		padding-top: 20px;
+	}
+
+	.homepage .subnav .divider {
+		display: none;
+	}
+
+	.homepage .subnav li {
+		display: block;
+		padding-bottom: 10px;
+	}
+
+	.homepage .subnav li + li {
+		padding-bottom: 0;
+	}
+
+	.homepage .subnav a {
+		font-size: 1.563rem;
+	}
+
+	.homepage .title {
+		width: 250px;
+	}
+}
