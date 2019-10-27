@@ -48,7 +48,7 @@
 <style id="case-study-colors">
     /* Project title */
     .main-title-color {
-      color: #2d4ab9;
+      color: #1e3577;
     }
 
     /* Intro copy block */
@@ -57,37 +57,50 @@
     }
 
     .intro-copy-bg {
-      background-color: #2d4ab9;
+      background-color: #1e3577;
     }
 
     /* Section title colors */
     .section-title-color {
-      color: #676767;
+      color: #1e3577;
     }
 
     .section-title-svg-color-1 {
-      stroke: #00E9C3;
+      stroke: #1e3577;
+    }
+
+    .section-title-svg-fill-1 {
+      fill: #1e3577;
     }
 
     .section-title-svg-color-2 {
-      stroke: #676767;
+      stroke: #ffffff;
     }
     .section-title-svg-fill-2 {
-      fill: #676767;
+      fill: #ababab;
     }
 
     /* Video player icons */
     .js-video-player .video-icon-color {
-      stroke: #676767;
+      stroke: #1e3577;
     }
 
     .js-video-player .video-icon-fill {
-      fill: #676767;
+      fill: #1e3577;
+    }
+
+    .js-video-player .button:hover .video-icon-color {
+      stroke: #ffffff;
+    }
+
+    .js-video-player .button {
+      background-color: #f1f1f1;
     }
 
     /* Color of the video player large play icon */
     .js-video-overlay .icon-graphic {
-      stroke: #fff;
+      stroke: #1e3577;
+      fill: none;
     }
 
     /* First block */
@@ -98,52 +111,63 @@
       background-color: #e9e9e9;
     }
     .section-text-color-1 {
-      color: #676767;
+      color: #ababab;
     }
 
     /* Second block */
     .section-bg-3 {
-      background-color: #fff;
+      background-color: #1e3577;
     }
     .craft .lead-screenshot .section-bg-4 {
-      background-color: #eee;
+      background-color: #1A2E69;
     }
     .section-text-color-2 {
-      color: #676767;
+      color: #ffffff;
+    }
+    .section-title-color-2 {
+      color: #ffffff;
+    }
+
+    .stats .section-content {
+      color: #777777;
+    }
+
+    .feedback .section-content {
+      color: #777777;
     }
 
     /* More design button */
     .button-color {
-      color: #676767;
+      color: #1e3577;
     }
 
     /* Show extra design button */
     .more-content-button {
-      stroke: #676767;
+      stroke: #1e3577;
     }
 
     .button-color:hover {
-      border-color: #676767;
+      border-color: #777777;
     }
 
     /* Divider below feedback */
     .divider-bg {
-      background: #676767;
+      background: #777777;
     }
 
     /* Project link */
     .project-link {
-      color: #676767;
-      background-color: #f0f0f0;
+      color: #ababab;
+      background-color: #f1f1f1;
     }
 
     .project-link span:after {
-      background-color: #676767;
+      background-color: #ababab;
     }
 
     /* More design captions */
     .extra-screenshots .caption {
-      color: #676767;
+      color: #ababab;
     }
   </style>
 
@@ -368,7 +392,7 @@
                 <span class="title section-title-color">Our Vision</span>
               </h2>
 
-              <div class="js-video-player" data-player-color="#0965DA" data-video="../../themes/nation/videos/peroni-italy.mp4" data-poster="/themes/nation/images/placeholders/work-page/syrup-sounds/video-placeholder.jpg">
+              <div class="js-video-player" data-player-color="#2d4ab9" data-video="../../themes/nation/videos/peroni-italy.mp4" data-poster="/themes/nation/images/placeholders/work-page/syrup-sounds/video-placeholder.jpg">
                 <div class="js-player"></div>
                 <div class="js-placeholder">
                   <picture class="js-slide-image">
@@ -383,7 +407,7 @@
                     <div class="icon">
                       <svg version="1.1" viewBox="0 0 75.3 75.3">
                         <g class="icon-graphic">
-                          <circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="37.7" cy="37.7" r="36.2"></circle>
+                          <circle stroke-width="2" stroke-miterlimit="10" cx="37.7" cy="37.7" r="36.2"></circle>
                           <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M32.2,47.1l15.7-9c0.6-0.3,0.6-1.1,0-1.5l-15.7-9c-0.6-0.3-1.3,0.1-1.3,0.7v18.1C31,47,31.7,47.4,32.2,47.1z"></path>
                         </g>
                       </svg>
@@ -427,7 +451,7 @@
             </div>
           </section>
 
-          <section class="craft section-bg-1 section-text-color-1">
+          <section class="craft section-bg-3 section-text-color-2">
             <div class="content-body">
               <h2 class="section-title">
                 <svg version="1.1" viewBox="0 0 57 50" class="icon">
@@ -446,7 +470,7 @@
                     <rect x="24.2" y="2" stroke-linejoin="round" stroke-miterlimit="10" width="8" height="8"></rect>
                   </g>
                 </svg>
-                <span class="title section-title-color">Craft &amp; Design</span>
+                <span class="title section-title-color-2">Craft &amp; Design</span>
               </h2>
               <div class="copy">
                 <div class="column">
@@ -458,7 +482,7 @@
               </div>
             </div>
             <div class="lead-screenshot">
-              <div class="background section-bg-2"></div>
+              <div class="background section-bg-4"></div>
               <figure class="media">
                 <picture class="js-slide-image">
                   <!--[if IE 9]><video style="display: none;"><![endif]-->
@@ -528,12 +552,12 @@
               <div class="title-content">
                 <h2 class="section-title section-title-color">
                   <svg version="1.1" viewBox="0 0 58 58" class="icon">
-                    <g class="icon-graphic section-title-svg-color-2">
+                    <g class="icon-graphic section-title-svg-color-1">
                       <circle fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="28.5" cy="29.8" r="26.5"></circle>
                       <circle fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="28.5" cy="29.8" r="21.8"></circle>
                     </g>
-                    <path class="icon-graphic-2 section-title-svg-fill-2" d="M37.7,19.8c-0.4-0.4-0.9-0.4-1.3-0.2l-11,5.8c-0.2,0.1-0.4,0.3-0.5,0.5l-5.8,11c-0.2,0.4-0.2,1,0.2,1.3c0.2,0.2,0.5,0.3,0.8,0.3c0.2,0,0.4,0,0.5-0.1l11-5.8c0.2-0.1,0.4-0.3,0.5-0.5l5.8-11C38.2,20.7,38.1,20.1,37.7,19.8z M22.8,34.7l3.4-6.4l3,3L22.8,34.7z M30.8,29.7l-3-3l6.4-3.4L30.8,29.7z"></path>
-                    <g style="fill: #FFFFFF; stroke-width: 2;" class="icon-graphic-3 section-title-svg-color-2">
+                    <path class="icon-graphic-2 section-title-svg-fill-1" d="M37.7,19.8c-0.4-0.4-0.9-0.4-1.3-0.2l-11,5.8c-0.2,0.1-0.4,0.3-0.5,0.5l-5.8,11c-0.2,0.4-0.2,1,0.2,1.3c0.2,0.2,0.5,0.3,0.8,0.3c0.2,0,0.4,0,0.5-0.1l11-5.8c0.2-0.1,0.4-0.3,0.5-0.5l5.8-11C38.2,20.7,38.1,20.1,37.7,19.8z M22.8,34.7l3.4-6.4l3,3L22.8,34.7z M30.8,29.7l-3-3l6.4-3.4L30.8,29.7z"></path>
+                    <g style="fill: #FFFFFF; stroke-width: 2;" class="icon-graphic-3 section-title-svg-color-1">
                       <line stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="28.5" y1="12.1" x2="28.5" y2="13.8"></line>
                       <line stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="28.5" y1="45.9" x2="28.5" y2="47.6"></line>
                       <line stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="46.3" y1="29.9" x2="44.5" y2="29.9"></line>
@@ -556,7 +580,7 @@
               <div class="title-content">
                 <h2 class="section-title section-title-color">
                   <svg version="1.1" viewBox="0 0 58 58" class="icon">
-                    <g class="icon-graphic section-title-svg-color-2" style="stroke-width: 2;">
+                    <g class="icon-graphic section-title-svg-color-1" style="stroke-width: 2;">
                       <path fill="none" stroke-linejoin="round" stroke-miterlimit="10" d="M50.3,46c3.5-4.5,5.7-10.2,5.7-16.4C56,14.7,44,2.8,29.3,2.8S2.5,14.7,2.5,29.5s12,26.7,26.7,26.7c6.4,0,12.3-2.3,16.9-6l7.7,2.7L50.3,46z"></path>
                       <circle fill="none" stroke-linejoin="round" stroke-miterlimit="10" cx="17.5" cy="29.5" r="2.8"></circle>
                       <circle fill="none" stroke-linejoin="round" stroke-miterlimit="10" cx="28.9" cy="29.5" r="2.8"></circle>
@@ -587,13 +611,13 @@
         <div class="options">
           <ul>
             <li>
-              <a href="../../work/test-project"data-view="/work/test-project">
+              <a href="../../work/syrup-sounds/"data-view="/work/syrup-sounds/">
                 <div class="media">
-                  <img src="../../themes/nation/images/placeholders/work-page/work-square-grolsch.jpg" alt="" />
+                  <img src="../../themes/nation/images/placeholders/work-page/work-square-syrup-sounds.jpg" alt="" />
                 </div>
                 <div class="overlay">
                   <h3 class="subtitle">Previous Case Study</h3>
-                  <h4 class="title" style="color: #003cff;">Grolsch</h4>
+                  <h4 class="title" style="color: #676767">Syrup Sounds</h4>
                   <div class="icon previous">
                     <div class="circle"></div>
                     <div class="icon-container">
@@ -624,13 +648,13 @@
               </a>
             </li>
             <li>
-              <a href="../../work/test-project"data-view="/work/test-project">
+              <a href="../../work/northskull/"data-view="/work/northskull/">
                 <div class="media">
-                  <img src="../../themes/nation/images/placeholders/work-page/work-square-peroni-italy.jpg" alt="" />
+                  <img src="../../themes/nation/images/placeholders/work-page/work-square-northskull.jpg" alt="" />
                 </div>
                 <div class="overlay">
                   <h3 class="subtitle">Next Case Study</h3>
-                  <h4 class="title" style="color: #66ff74;">Peroni Italy</h4>
+                  <h4 class="title" style="color: #f5f3b1">Northskull</h4>
                   <div class="icon next">
                     <div class="circle"></div>
                     <div class="icon-container">
@@ -794,16 +818,5 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP-Lbk1RpRAa44tUIpvz5MpuZyKdT_clo"></script>
     <script src="../../themes/nation/compiled/nation.js?v=8.0.6"></script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-24097277-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
   </body>
 </html>
